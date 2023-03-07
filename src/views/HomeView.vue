@@ -1,11 +1,11 @@
 <template>
   <div>
-    <TheNavBAr />
+    
   </div>
 </template>
 
 <script setup>
-import TheNavBAr from '../components/TheNavBAr.vue';
+
 
 </script>
 
