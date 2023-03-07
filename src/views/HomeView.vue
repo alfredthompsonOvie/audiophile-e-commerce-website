@@ -1,9 +1,14 @@
+<template>
+  <div>
+    <TheNavBAr />
+  </div>
+</template>
+
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import TheNavBAr from '../components/TheNavBAr.vue';
+
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style lang="scss" scoped>
+
+</style>
