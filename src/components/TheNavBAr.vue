@@ -122,10 +122,12 @@ const handleClick = () => {
 
 <style scoped>
 nav {
-	background-color: #000;
+	/* background-color: #000; */
+	background-color: #0e0e0e;
 	height: 5em;
 	position: relative;
 	z-index: 99;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .nav__content {
 	display: flex;
@@ -172,7 +174,15 @@ nav {
 	left: 0%;
 	width: 100%;
 }
+@media (min-width: 600px) {
+	nav {
+		border-bottom: 0;
+	}
+	.nav__content {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
 
+}
 @media (min-width: 600px) and (max-width: 991px) {
 	.nav__content {
 		display: flex;
@@ -209,6 +219,11 @@ nav {
 		height: 100%;
 		width: 100%;
 		z-index: 10;
+	}
+}
+@media (min-width: 992px){
+	nav {
+		background-color: #121212;
 	}
 }
 </style>
