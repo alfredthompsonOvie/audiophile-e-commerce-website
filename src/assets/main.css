@@ -133,7 +133,7 @@ picture {
 	max-width: 380px;
 	margin-inline: auto;
 	margin-top: 5em;
-	padding-inline: 1em;
+	padding-inline: 0.5em;
 }
 
 .subHeading {
@@ -169,7 +169,6 @@ picture {
 .cta {
 	display: inline-block;
 	padding: 1em 2.5em;
-	background-color: #d87d4a;
 	font-weight: 700;
 	font-size: 13px;
 	line-height: 18px;
@@ -177,3 +176,16 @@ picture {
 	text-transform: uppercase;
 	color: #ffffff;
 }
+.cta--prim {
+	background-color: #d87d4a;
+}
+.cta--sec {
+	background-color: #000;
+}
+.cta--alt {
+	background-color: transparent;
+	border: 1px solid;
+}
+
+/* -product */
+/* */

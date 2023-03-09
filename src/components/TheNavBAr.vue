@@ -167,7 +167,8 @@ nav {
 	left: 50%;
 	transition: all 0.3s linear;
 	background-color: #d87d4a;
-	mix-blend-mode: multiply;
+	/* mix-blend-mode: multiply; */
+	mix-blend-mode: darken;
 }
 
 .nav__menu a:hover::before {
