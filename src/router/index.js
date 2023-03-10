@@ -18,14 +18,25 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/category',
-      name: 'category',
-      component: () => import('../views/CategoryView.vue')
+      path: '/headphones',
+      name: 'headphones',
+      component: () => import('../views/HeadphonesView.vue')
     },
     {
-      path: '/product',
+      path: '/speakers',
+      name: 'speakers',
+      component: () => import('../views/SpeakersView.vue')
+    },
+    {
+      path: '/speakers/product/:id',
       name: 'product',
-      component: () => import('../views/ProductView.vue')
+      component: () => import('../views/products/ProductView.vue'),
+      props: true
+    },
+    {
+      path: '/earphones',
+      name: 'earphones',
+      component: () => import('../views/EarphonesView.vue')
     },
   ]
 })

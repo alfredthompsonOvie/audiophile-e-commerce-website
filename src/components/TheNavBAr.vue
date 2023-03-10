@@ -12,14 +12,14 @@
 			</section>
 
 			<router-link to="/" class="brand">
-				<img src="@/assets/images/audiophile.svg" alt="" />
+				<img src="@/assets/images/audiophile.svg" alt="audiophile home button" />
 			</router-link>
 
 			<!-- menu -->
 			<!-- mobile  -->
-			<ul class="dropdown" v-show="isMenuOpen">
+			<!-- <ul class="dropdown" v-show="isMenuOpen">
 				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'product' }" class="dropdown__link">
+					<router-link :to="{ name: 'headphones' }" class="dropdown__link">
 						<img src="@/assets/images/image-headphone-menu.svg" alt="" />
 						<p>Headphones</p>
 						<span>
@@ -29,7 +29,7 @@
 					</router-link>
 				</li>
 				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'product' }" class="dropdown__link">
+					<router-link :to="{ name: 'speakers' }" class="dropdown__link">
 						<img src="@/assets/images/image-speakers-menu.svg" alt="" />
 						<p>Speakers</p>
 						<span>
@@ -39,7 +39,7 @@
 					</router-link>
 				</li>
 				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'product' }" class="dropdown__link">
+					<router-link :to="{ name: 'earphones' }" class="dropdown__link">
 						<img src="@/assets/images/image-earphone-menu.png" alt="" />
 						<p>Earphones</p>
 						<span>
@@ -48,23 +48,25 @@
 						</span>
 					</router-link>
 				</li>
-			</ul>
+			</ul> -->
+			<BaseCategoryLinks class="dropdown" v-show="isMenuOpen"/>
 
 			<!-- desktop nav -->
-			<ul class="nav__menu" v-if="!isMobile">
+			<!-- <ul class="nav__menu" v-if="!isMobile">
 				<li>
-					<router-link :to="{ name: '' }">Home</router-link>
+					<router-link :to="{ name: 'home' }">Home</router-link>
 				</li>
 				<li>
-					<router-link :to="{ name: '' }">Headphones</router-link>
+					<router-link :to="{ name: 'headphones' }">Headphones</router-link>
 				</li>
 				<li>
-					<router-link :to="{ name: '' }">Speakers</router-link>
+					<router-link :to="{ name: 'speakers' }">Speakers</router-link>
 				</li>
 				<li>
-					<router-link :to="{ name: '' }">Earphones</router-link>
+					<router-link :to="{ name: 'earphones' }">Earphones</router-link>
 				</li>
-			</ul>
+			</ul> -->
+			<BaseNavMenu v-if="!isMobile" />
 			<!-- ^^^^^^^^^^menu^^^^^^^^^^^ -->
 			<!-- cart -->
 			<button type="button" class="btn--cart">
@@ -78,6 +80,8 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { gsap } from "gsap";
+import BaseCategoryLinks from "./BaseCategoryLinks.vue";
+import BaseNavMenu from "./BaseNavMenu.vue";
 
 const isMenuOpen = ref(null);
 const isMobile = ref(null);
@@ -147,34 +151,8 @@ nav {
 	z-index: 20;
 }
 
-.nav__menu {
-	display: flex;
-	align-items: center;
-	gap: 2em;
-}
-.nav__menu a {
-	font-size: 13px;
-	line-height: 25px;
-	letter-spacing: 2px;
-	position: relative;
-}
+/* nav menu */
 
-.nav__menu a::before {
-	content: "";
-	position: absolute;
-	width: 0%;
-	height: 150%;
-	left: 50%;
-	transition: all 0.3s linear;
-	background-color: #d87d4a;
-	/* mix-blend-mode: multiply; */
-	mix-blend-mode: darken;
-}
-
-.nav__menu a:hover::before {
-	left: 0%;
-	width: 100%;
-}
 @media (min-width: 600px) {
 	nav {
 		border-bottom: 0;
@@ -191,7 +169,7 @@ nav {
 		align-items: center;
 		gap: 2em;
 	}
-	.dropdown {
+	/* .dropdown {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -199,14 +177,17 @@ nav {
 		padding: 5em 2em 4em;
 		border-bottom-left-radius: 20px;
 		border-bottom-right-radius: 20px;
+	} */
+	.dropdown {
+		padding: 5em 2em 4em;
 	}
 
-	.dropdown__item + .dropdown__item {
+	/* .dropdown__item + .dropdown__item {
 		margin-top: 0;
 	}
 	.dropdown__item {
 		flex: 1;
-	}
+	} */
 	.btn--cart {
 		margin-left: auto;
 	}

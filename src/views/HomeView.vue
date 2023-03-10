@@ -26,8 +26,8 @@
 				</section>
 			</section>
 		</section>
-		<section class="category">
-			<ul class="dropdown">
+		<section class="category grid">
+			<!-- <ul class="dropdown">
 				<li class="dropdown__item menuItem">
 					<router-link :to="{ name: 'product' }" class="dropdown__link">
 						<img src="@/assets/images/image-headphone-menu.svg" alt="" />
@@ -58,45 +58,95 @@
 						</span>
 					</router-link>
 				</li>
-			</ul>
+			</ul> -->
+			<BaseCategoryLinks class="grid__content dropdown" />
 		</section>
-		<section class="product">
-			<section class="product__speaker--zx9">
-				<picture>
-					<source
-						srcset="@/assets/images/image-zx9-speaker-preview-desktop.svg"
-						media="(min-width: 992px)"
-					/>
-					<img src="@/assets/images/image-zx9-speaker-preview.svg" alt="" />
-				</picture>
-				<section class="product__content">
-					<h1 class="heading">zx9 Speakers</h1>
-					<p>
-						Upgrade to premium speakers that are phenomenally built to deliver
-						truly remarkable sound.
-					</p>
-					<router-link :to="{ name: '' }" class="cta cta--sec"
-						>see product</router-link
-					>
+		<section class="products grid">
+			<section class="grid__content">
+				<section class="product__contents product__speaker--zx9">
+					<picture>
+						<source
+							srcset="@/assets/images/image-zx9-speaker-preview-desktop.svg"
+							media="(min-width: 992px)"
+						/>
+						<img src="@/assets/images/image-zx9-speaker-preview.svg" alt="" />
+					</picture>
+					<section class="product__content">
+						<h1 class="heading">zx9 Speakers</h1>
+						<p>
+							Upgrade to premium speakers that are phenomenally built to deliver
+							truly remarkable sound.
+						</p>
+						<router-link
+							:to="{ name: 'product', params: { id: 'zx9-speakers' } }"
+							class="cta cta--sec"
+							>see product</router-link
+						>
+					</section>
+				</section>
+				<!--  -->
+				<!--  -->
+				<!--  -->
+				<section class="product__contents product--zx7-speakers">
+					<picture>
+						<source
+							srcset="@/assets/images/zx7-speaker-desktop.svg"
+							media="(min-width: 992px)"
+						/>
+						<source
+							srcset="@/assets/images/zx7-speaker-tablet.svg"
+							media="(min-width: 500px)"
+						/>
+						<img src="@/assets/images/zx7-speaker-mobile.svg" alt="" />
+					</picture>
+					<section class="product__content--zx7">
+						<h1 class="heading--alt">zx7 Speakers</h1>
+						<router-link
+							:to="{ name: 'product', params: { id: 'zx7-speaker' } }"
+							class="cta cta--alt"
+							>see product</router-link
+						>
+					</section>
+				</section>
+				<!--  -->
+				<!--  -->
+				<!--  -->
+				<section class="product__contents product--earphones">
+					<picture>
+						<source
+							srcset="@/assets/images/yx1-earphones-desktop.svg"
+							media="(min-width: 992px)"
+						/>
+						<source
+							srcset="@/assets/images/yx1-earphones-tablet.svg"
+							media="(min-width: 600px)"
+						/>
+						<img src="@/assets/images/yx1-earphones-mobile.svg" alt="" />
+					</picture>
+					<section class="product__content--yx1">
+						<h1 class="heading--alt">yx1 earphones</h1>
+						<router-link :to="{ name: '' }" class="cta cta--alt"
+							>see product</router-link
+						>
+					</section>
 				</section>
 			</section>
-			<section class="product__zx7-speaker">
-				<router-link :to="{ name: '' }" class="cta cta--alt"
-					>see product</router-link
-				>
-			</section>
-			<section class="product__earphones">
-				<router-link :to="{ name: '' }" class="cta cta--alt"
-					>see product</router-link
-				>
-			</section>
 		</section>
+
+		<BaseAbout/> 
+		
 	</main>
 </template>
 
-<script setup></script>
+<script setup>
+import BaseCategoryLinks from "../components/BaseCategoryLinks.vue";
+import BaseAbout from "../components/BaseAbout.vue";
+</script>
 
 <style scoped>
+.dropdown {
+	padding-inline: 0;
+}
 .hero {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	background-color: #0e0e0e;
@@ -110,23 +160,20 @@
 }
 .category {
 	margin-top: 5em;
-	padding: 1em;
 }
-.product {
+.products {
 	margin-top: 4em;
-	padding: 1em;
 }
 .product__speaker--zx9 {
 	background-color: #d87d4a;
-	border-radius: 8px;
-	padding: 4em 1em;
+
+	padding: 3em 1em;
 	text-align: center;
 	color: #fff;
 	background-image: url(@/assets/images/oval.svg);
 	background-repeat: no-repeat;
 	background-position: top center;
 }
-
 .product__speaker--zx9 h1 {
 	max-width: 200px;
 	margin: 0.5em auto;
@@ -136,16 +183,79 @@
 	font-size: 15px;
 	line-height: 25px;
 	color: #ffffff;
-	/* mix-blend-mode: normal; */
 	opacity: 0.75;
-	margin: 0 auto 1em;
+	margin: 0 auto 1.5em;
 	max-width: 300px;
+}
+/* products */
+.product__contents {
+	border-radius: 8px;
+	overflow: hidden;
+}
+.product__contents + .product__contents {
+	margin-top: 2em;
+}
+.product--zx7-speakers {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 12.5em;
+	grid-template-rows: 18.5em;
+	grid-template-rows: 15.5em;
+	grid-template-rows: 320px;
+	grid-template-rows: auto;
+}
+.product--zx7-speakers picture {
+	grid-row: 1/-1;
+	grid-column: 1/-1;
+
+	background-color: red;
+}
+.product--zx7-speakers img {
+	display: block;
+	width: 100%;
+	/* height: 320px; */
+
+	/* object-fit: cover; */
+}
+.product__content--zx7 {
+	grid-row: 1;
+	grid-column: 1/-1;
+	align-self: center;
+	padding: 1em;
+}
+.heading--alt {
+	font-weight: 700;
+	font-size: clamp(22px, 3vw, 28px);
+	line-height: 38px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #000;
+	margin-bottom: 0.8em;
+}
+.product--earphones {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, auto);
+	gap: 1em;
+	overflow: hidden;
+}
+.product--earphones img {
+	border-radius: 8px;
+	display: block;
+	width: 100%;
+}
+.product__content--yx1 {
+	/* text-align: center; */
+	/* margin-top: 1em; */
+	background: #f1f1f1;
+	border-radius: 8px;
+	padding: 2em;
 }
 @media (min-width: 600px) {
 	.category {
 		margin-top: 3em;
 	}
-	.dropdown {
+	/* .dropdown {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -159,15 +269,34 @@
 	}
 	.dropdown__item {
 		flex: 1;
-	}
+	} */
 	.btn--cart {
 		margin-left: auto;
 	}
 	.product__speaker--zx9 {
 		background-image: url(@/assets/images/oval-tablet.svg);
+		background-size: contain;
 	}
 	.product__speaker--zx9 p {
 		max-width: 350px;
+	}
+	.product__content--zx7 {
+		padding-left: 3em;
+	}
+	.product--earphones {
+		/* flex-direction: row; */
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+	/* .product--earphones img {
+	flex: 1;
+} */
+	.product__content--yx1 {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
 	}
 }
 @media (min-width: 600px) and (max-width: 992px) {
@@ -206,25 +335,29 @@
 		margin: 0;
 	}
 	.product__speaker--zx9 {
-		background-image: url(@/assets/images/oval-tablet.svg);
-    background-position: 7em 12em;
-    background-size: contain;
+		background-image: url(@/assets/images/oval-desktop.svg);
+		background-position: left;
+		background-size: contain;
 		text-align: left;
 
 		display: flex;
 		align-items: flex-end;
-    justify-content: center;
-    gap: 8em;
-		padding-bottom: 0;
-    overflow: hidden;
+		justify-content: center;
+		gap: 6em;
+
+		padding-bottom: 0em;
+		padding-left: 5em;
+		padding-right: 7em;
+		overflow: hidden;
 	}
-  .product__speaker--zx9 img {
-    position: relative;
-    bottom: -.4em;
-  }
+	.product__speaker--zx9 img {
+		align-self: flex-end;
+		display: block;
+	}
 	.product__content {
 		align-self: flex-start;
 		/* margin-top: 1em; */
+		/* border-radius: 0; */
 	}
 	.product__speaker--zx9 h1 {
 		max-width: auto;
@@ -232,10 +365,21 @@
 		font-weight: 700;
 		font-size: 56px;
 		line-height: 58px;
+
+		font-size: 40px;
+		line-height: 40px;
+
+		font-size: clamp(40px, 4vw, 56px);
 		letter-spacing: 2px;
 	}
 	.product__speaker--zx9 p {
-    margin-bottom: 2em;
+		margin-bottom: 2em;
+	}
+	.product__content--zx7 {
+		padding-left: 5em;
+	}
+		.product__content--yx1 {
+		padding-left: 5em;
 	}
 }
 
