@@ -20,19 +20,19 @@
 
 			<ul class="social__media">
 				<li>
-					<router-link to="https://www.facebook.com" class="social__link">
+					<AppLink to="https://www.facebook.com" class="social__link">
 						<font-awesome-icon icon="fa-brands fa-square-facebook" />
-					</router-link>
+					</AppLink>
 				</li>
 				<li>
-					<router-link to="https://www.twitter.com" class="social__link">
+					<AppLink to="https://www.twitter.com" class="social__link">
 						<font-awesome-icon icon="fa-brands fa-twitter" />
-					</router-link>
+					</AppLink>
 				</li>
 				<li>
-					<router-link to="https://www.instagram.com" class="social__link">
+					<AppLink to="https://www.instagram.com" class="social__link">
 						<font-awesome-icon icon="fa-brands fa-instagram" />
-					</router-link>
+					</AppLink>
 				</li>
 			</ul>
 			<span class="rect"></span>
@@ -42,6 +42,7 @@
 
 <script setup>
 import BaseNavMenu from "./BaseNavMenu.vue";
+import AppLink from "./AppLink.vue";
 </script>
 
 <style scoped>
@@ -140,6 +141,7 @@ p {
 		grid-column: 1;
 		grid-row: 1;
     margin: 0;
+		justify-self: start;
 	}
 	.navLists {
 		grid-column: 2;
