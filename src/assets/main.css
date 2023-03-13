@@ -26,6 +26,7 @@ a {
 button {
 	background-color: transparent;
 	border: 0;
+	cursor: pointer;
 }
 img {
 	max-width: 100%;
@@ -243,13 +244,7 @@ ul {
 	max-width: 550px;
 	margin: 0 auto 1.5em;
 }
-.btn--backBtn {
-	font-weight: 500;
-	font-size: 15px;
-	line-height: 25px;
-	color: #000;
-	opacity: 0.5;
-}
+/*  */
 @media (min-width: 600px) {
 	.categoryHeading {
 		padding: 2em 0;

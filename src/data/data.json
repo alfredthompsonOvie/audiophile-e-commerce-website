@@ -7,6 +7,12 @@
 				"tablet": "image-xx99-mark-II-headphones-tablet-Group3.svg",
 				"mobile": "image-xx99-mark-II-headphones-mobile-Group3.svg"
 			},
+			"detailsPreviewImage": {
+				
+				"desktop": "image-xx99-mark-II-headphones-desktop-details.svg",
+				"tablet": "image-xx99-mark-II-headphones-tablet-details.svg",
+				"mobile": "image-xx99-mark-II-headphones-mobile-details.svg"
+			},
 			"title": "XX99 Mark II Headphones",
 			"description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
 			"price": "$ 2,999",
@@ -31,6 +37,12 @@
 				"tablet": "image-xx99-mark-I-headphones-tablet-Group3.svg",
 				"mobile": "image-xx99-mark-I-headphones-mobile-Group3.svg"
 			},
+			"detailsPreviewImage": {
+				
+				"desktop": "image-xx99-mark-I-headphones-desktop-details.svg",
+				"tablet": "image-xx99-mark-I-headphones-tablet-details.svg",
+				"mobile": "image-xx99-mark-I-headphones-mobile-details.svg"
+			},
 			"title": "XX99 Mark I Headphones",
 			"description": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
 			"price": "$ 1,750",
@@ -53,6 +65,12 @@
 				"desktop": "image-xx59-headphones-desktop-Group3.svg",
 				"tablet": "image-xx59-headphones-tablet-Group3.svg",
 				"mobile": "image-xx59-headphones-mobile-Group3.svg"
+			},
+			"detailsPreviewImage": {
+				
+				"desktop": "image-xx59-headphones-desktop-details.svg",
+				"tablet": "image-xx59-headphones-tablet-details.svg",
+				"mobile": "image-xx59-headphones-mobile-details.svg"
 			},
 			"title": "XX59 Headphones",
 			"description": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
@@ -79,6 +97,12 @@
 				"tablet": "image-zx9-speaker-tablet-Group3.svg",
 				"mobile": "image-zx9-speaker-mobile-Group3.svg"
 			},
+			"detailsPreviewImage": {
+				
+				"desktop": "image-zx9-speaker-desktop-details.svg",
+				"tablet": "image-zx9-speaker-tablet-details.svg",
+				"mobile": "image-zx9-speaker-mobile-details.svg"
+			},
 			"title": "ZX9 SPEAKER",
 			"description": "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
 			"price": "$ 4,500",
@@ -102,6 +126,12 @@
 				"desktop": "image-zx7-speaker-desktop-Group3.svg",
 				"tablet": "image-zx7-speaker-tablet-Group3.svg",
 				"mobile": "image-zx7-speaker-mobile-Group3.svg"
+			},
+			"detailsPreviewImage": {
+				
+				"desktop": "image-zx7-speaker-desktop-details.svg",
+				"tablet": "image-zx7-speaker-tablet-details.svg",
+				"mobile": "image-zx7-speaker-mobile-details.svg"
 			},
 			"title": "ZX7 SPEAKER",
 			"description": "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
@@ -128,6 +158,12 @@
 				"desktop": "image-yx1-wireless-earphones-desktop-Group3.svg",
 				"tablet": "image-yx1-wireless-earphones-tablet-Group3.svg",
 				"mobile": "image-yx1-wireless-earphones-mobile-Group3.svg"
+			},
+			"detailsPreviewImage": {
+				
+				"desktop": "image-yx1-wireless-earphones-desktop-details.svg",
+				"tablet": "image-yx1-wireless-earphones-tablet-details.svg",
+				"mobile": "image-yx1-wireless-earphones-mobile-details.svg"
 			},
 			"title": "YX1 WIRELESS EARPHONES",
 			"description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
