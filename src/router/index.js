@@ -31,23 +31,23 @@ const router = createRouter({
       name: 'headphones',
       component: () => import('../views/HeadphonesView.vue')
     },
-    // {
-    //   path: '/headphones/:id',
-    //   name: 'headphoneDetails',
-    //   component: () => import('../views/products/HeadphonesDetailsView.vue'),
-    //   props: true,
-    // },
+    {
+      path: '/headphones/:id',
+      name: 'headphoneDetails',
+      component: () => import('../views/products/HeadphonesDetailsView.vue'),
+      props: true,
+    },
     {
       path: '/speakers',
       name: 'speakers',
       component: () => import('../views/SpeakersView.vue')
     },
-    // {
-    //   path: '/speakers/:id',
-    //   name: 'speakerDetails',
-    //   component: () => import('../views/products/SpeakersDetailsView.vue.vue'),
-    //   props: true
-    // },
+    {
+      path: '/speakers/:id',
+      name: 'speakerDetails',
+      component: () => import('../views/products/SpeakersDetailsView.vue'),
+      props: true
+    },
     {
       path: '/earphones',
       name: 'earphones',
@@ -59,9 +59,15 @@ const router = createRouter({
       component: () => import('../views/products/EarphonesDetailsView.vue'),
       props: true
     },
+    // {
+    //   path: '/headphones/:id',
+    //   name: 'headphonesDetails',
+    //   component: () => import('../views/products/ProductDetailsView.vue'),
+    //   props: true
+    // },
     {
-      path: '/product/:id',
-      name: 'productDetails',
+      path: '/:id',
+      name: 'productDetail',
       component: () => import('../views/products/ProductDetailsView.vue'),
       props: true
     },

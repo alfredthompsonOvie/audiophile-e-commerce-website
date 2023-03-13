@@ -20,9 +20,12 @@
 						Experience natural, lifelike audio and exceptional build quality
 						made for the passionate music enthusiast.
 					</p>
-					<router-link :to="{ name: '' }" class="cta cta--prim"
+					<router-link :to="{ name: 'productDetail', params: { id: 'headphones/xx99-mark-II-headphones' }}" class="cta cta--prim"
 						>see product</router-link
 					>
+					<!-- <router-link :to="{ name: 'headphoneDetails', params: { id: `${'xx99 mark ii headphones'.split(' ').join('-')}`} }" class="cta cta--prim"
+						>see product</router-link
+					> -->
 				</section>
 			</section>
 		</section>
@@ -77,11 +80,14 @@
 							Upgrade to premium speakers that are phenomenally built to deliver
 							truly remarkable sound.
 						</p>
-						<router-link
-							:to="{ name: 'product', params: { id: 'zx9-speakers' } }"
+						<!-- <router-link
+							:to="{ name: 'speakerDetails', params: { id: 'zx9-speakers' } }"
 							class="cta cta--sec"
 							>see product</router-link
-						>
+						> -->
+						<router-link :to="{ name: 'productDetail', params: { id: 'speakers/zx9-speaker' }}" class="cta cta--sec"
+						>see product</router-link
+					>
 					</section>
 				</section>
 				<!--  -->
@@ -101,11 +107,14 @@
 					</picture>
 					<section class="product__content--zx7">
 						<h1 class="heading--alt">zx7 Speakers</h1>
-						<router-link
-							:to="{ name: 'product', params: { id: 'zx7-speaker' } }"
+						<!-- <router-link
+							:to="{ name: 'speakerDetails', params: { id: 'zx7-speaker' } }"
 							class="cta cta--alt"
 							>see product</router-link
-						>
+						> -->
+						<router-link :to="{ name: 'productDetail', params: { id: 'speakers/zx7-speaker' }}" class="cta cta--alt"
+						>see product</router-link
+					>
 					</section>
 				</section>
 				<!--  -->
@@ -125,9 +134,12 @@
 					</picture>
 					<section class="product__content--yx1">
 						<h1 class="heading--alt">yx1 earphones</h1>
-						<router-link :to="{ name: '' }" class="cta cta--alt"
+						<!-- <router-link :to="{ name: 'earphoneDetails', params: { id: 'yx1-earphones'} }" class="cta cta--alt"
 							>see product</router-link
-						>
+						> -->
+						<router-link :to="{ name: 'productDetail', params: { id: 'earphones/YX1-WIRELESS-EARPHONES' }}" class="cta cta--alt"
+						>see product</router-link
+					>
 					</section>
 				</section>
 			</section>

@@ -30,9 +30,12 @@
 						<p class="product__description">
 							{{ earphone.description }}
 						</p>
-						<router-link :to="{ name: 'earphoneDetails', params: { id: `${earphone.title.split(' ').join('')}` } }" class="cta cta--prim"
+						<!-- <router-link :to="{ name: 'earphoneDetails', params: { id: `${earphone.title.split(' ').join('-')}` } }" class="cta cta--prim"
 							>see product</router-link
-						>
+						> -->
+						<router-link :to="{ name: 'productDetail', params: { id: `earphones/${earphone.title.split(' ').join('-')}` }}" class="cta cta--prim"
+						>see product</router-link
+					>
 					</section>
 				</section>
         <BaseCategoryLinks class="categoryLinks"/>

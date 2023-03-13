@@ -30,9 +30,12 @@
 						<p class="product__description">
 							{{ speaker.description }}
 						</p>
-						<router-link :to="{ name: '' }" class="cta cta--prim"
+						<!-- <router-link :to="{ name: 'speakerDetails', params: { id: `${speaker.title.split(' ').join('-')}`} }" class="cta cta--prim"
 							>see product</router-link
-						>
+						> -->
+						<router-link :to="{ name: 'productDetail', params: { id: `speakers/${speaker.title.split(' ').join('-')}` }}" class="cta cta--prim"
+						>see product</router-link
+					>
 					</section>
 				</section>
         <BaseCategoryLinks class="categoryLinks"/>
