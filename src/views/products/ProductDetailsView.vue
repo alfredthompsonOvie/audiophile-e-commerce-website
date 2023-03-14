@@ -6,167 +6,169 @@
 					go back
 				</button>
 
-				<section class="product__DetailsPage__contents">
-					<section class="product__details">
-						<picture>
-							<source
-								:srcset="`${getImageUrl(
-									productDetail[0].detailsPreviewImage.desktop
-								)}`"
-								media="(min-width: 992px)"
-							/>
-							<source
-								:srcset="`${getImageUrl(
-									productDetail[0].detailsPreviewImage.tablet
-								)}`"
-								media="(min-width: 600px)"
-							/>
-							<img
-								:src="`${getImageUrl(
-									productDetail[0].detailsPreviewImage.mobile
-								)}`"
-								alt=""
-							/>
-						</picture>
-						<section class="product__content">
-							<small class="product__new" v-if="productDetail[0].new">
-								new product</small
-							>
-							<h1 class="product__title">{{ productDetail[0].title }}</h1>
-							<p class="product__description">
-								{{ productDetail[0].description }}
-							</p>
-
-							<p class="price">{{ productDetail[0].price }}</p>
-
-							<form>
-								<section class="form__group">
-									<button
-										type="button"
-										class="btn--decreaseQuantity"
-										@click.prevent="decreaseCount"
-									>
-										-
-									</button>
-									<label for="productQuantity"></label>
-									<input
-										type="text"
-										name="productQuantity"
-										id="productQuantity"
-										class="form__control"
-										v-model="productQuantity"
-									/>
-									<button
-										type="button"
-										class="btn--increaseQuantity"
-										@click.prevent="increaseCount"
-									>
-										+
-									</button>
-								</section>
-								<button type="submit" class="cta cta--prim submit">
-									Add to cart
-								</button>
-							</form>
-						</section>
-					</section>
-
-					<section class="features">
-						<section class="features__description">
-							<h1 class="title">Features</h1>
-							<p
-								v-for="feature in productDetail[0].features"
-								:key="feature"
-								class="description"
-							>
-								{{ feature }}
-							</p>
-						</section>
-						<section class="contents">
-							<h1 class="title">In the box</h1>
-							<div>
-								<div
-									v-for="content in productDetail[0].contents"
-									:key="content"
-								>
-									<p v-for="(value, key) in content" :key="key">
-										<span class="quantity">{{ value }}x </span>
-										<span class="description">
-											{{ key.split("_").join(" ") }}</span
-										>
-									</p>
-								</div>
-							</div>
-						</section>
-					</section>
-				</section>
-				<!-- showcase -->
-				<section class="showcase">
-					<picture class="showcase--one">
-						<source srcset="" media="(min-width: 992px)" />
-						<source srcset="" media="(min-width: 600px)" />
-						<img
-							:src="`${getImageUrl(productDetail[0].showcase[0].mobile)}`"
-							alt=""
-						/>
-						<!---->
-						<!-- {{ productDetail[0].showcase[0].mobile }}
-						{{ productDetail[0].showcase[1].mobile }}
-						{{ productDetail[0].showcase[2].mobile }} -->
-					</picture>
-					<picture class="showcase--two">
-						<source srcset="" media="(min-width: 992px)" />
-						<source srcset="" media="(min-width: 600px)" />
-						<img
-							:src="`${getImageUrl(productDetail[0].showcase[1].mobile)}`"
-							alt=""
-						/>
-					</picture>
-					<picture class="showcase--three">
-						<!-- <source :srcset="`${getImageUrl(productDetail[0].showcase[2].desktop)}`" media="(min-width: 992px)">
-						<source :srcset="`${getImageUrl(productDetail[0].showcase[2].tablet)}`" media="(min-width: 600px)"> -->
-						<source srcset="" media="(min-width: 992px)" />
-						<source srcset="" media="(min-width: 600px)" />
-						<img
-							:src="`${getImageUrl(productDetail[0].showcase[2].mobile)}`"
-							alt=""
-						/>
-					</picture>
-				</section>
-				<!-- otherProducts -->
-				<section class="moreProduct">
-					<h1>you may also like</h1>
-					<section class="card__container">
-						<section
-							v-for="prod in productDetail[0].otherProducts"
-							:key="prod.title"
-							class="card"
-						>
-							<picture class="showcase--two">
+				<template v-if="productDetail">
+					<section class="product__DetailsPage__contents">
+						<section class="product__details">
+							<picture>
 								<source
-									:srcset="`${getImageUrl(prod.desktop)}`"
+									:srcset="`${getImageUrl(
+										productDetail[0].detailsPreviewImage.desktop
+									)}`"
 									media="(min-width: 992px)"
 								/>
 								<source
-									:srcset="`${getImageUrl(prod.tablet)}`"
+									:srcset="`${getImageUrl(
+										productDetail[0].detailsPreviewImage.tablet
+									)}`"
 									media="(min-width: 600px)"
 								/>
-								<img :src="`${getImageUrl(prod.mobile)}`" alt="" />
+								<img
+									:src="`${getImageUrl(
+										productDetail[0].detailsPreviewImage.mobile
+									)}`"
+									alt=""
+								/>
 							</picture>
-							<section class="card__info">
-								<h1>{{ prod.title }}</h1>
-								<router-link
-									:to="{
-										name: 'productDetail',
-										params: { id: `${prod.link}` },
-									}"
-									class="cta cta--prim"
-									>see product</router-link
+							<section class="product__content">
+								<small class="product__new" v-if="productDetail[0].new">
+									new product</small
 								>
+								<h1 class="product__title">{{ productDetail[0].title }}</h1>
+								<p class="product__description">
+									{{ productDetail[0].description }}
+								</p>
+
+								<p class="price">{{ productDetail[0].price }}</p>
+
+								<form>
+									<section class="form__group">
+										<button
+											type="button"
+											class="btn--decreaseQuantity"
+											@click.prevent="decreaseCount"
+										>
+											-
+										</button>
+										<label for="productQuantity"></label>
+										<input
+											type="text"
+											name="productQuantity"
+											id="productQuantity"
+											class="form__control"
+											v-model="productQuantity"
+										/>
+										<button
+											type="button"
+											class="btn--increaseQuantity"
+											@click.prevent="increaseCount"
+										>
+											+
+										</button>
+									</section>
+									<button type="submit" class="cta cta--prim submit">
+										Add to cart
+									</button>
+								</form>
+							</section>
+						</section>
+
+						<section class="features">
+							<section class="features__description">
+								<h1 class="title">Features</h1>
+								<p
+									v-for="feature in productDetail[0].features"
+									:key="feature"
+									class="description"
+								>
+									{{ feature }}
+								</p>
+							</section>
+							<section class="contents">
+								<h1 class="title">In the box</h1>
+								<div>
+									<div
+										v-for="content in productDetail[0].contents"
+										:key="content"
+									>
+										<p v-for="(value, key) in content" :key="key">
+											<span class="quantity">{{ value }}x </span>
+											<span class="description">
+												{{ key.split("_").join(" ") }}</span
+											>
+										</p>
+									</div>
+								</div>
 							</section>
 						</section>
 					</section>
-				</section>
+					<!-- showcase -->
+					<section class="showcase">
+						<picture class="showcase--one">
+							<source srcset="" media="(min-width: 992px)" />
+							<source srcset="" media="(min-width: 600px)" />
+							<img
+								:src="`${getImageUrl(productDetail[0].showcase[0].mobile)}`"
+								alt=""
+							/>
+							<!---->
+							<!-- {{ productDetail[0].showcase[0].mobile }}
+						{{ productDetail[0].showcase[1].mobile }}
+						{{ productDetail[0].showcase[2].mobile }} -->
+						</picture>
+						<picture class="showcase--two">
+							<source srcset="" media="(min-width: 992px)" />
+							<source srcset="" media="(min-width: 600px)" />
+							<img
+								:src="`${getImageUrl(productDetail[0].showcase[1].mobile)}`"
+								alt=""
+							/>
+						</picture>
+						<picture class="showcase--three">
+							<!-- <source :srcset="`${getImageUrl(productDetail[0].showcase[2].desktop)}`" media="(min-width: 992px)">
+						<source :srcset="`${getImageUrl(productDetail[0].showcase[2].tablet)}`" media="(min-width: 600px)"> -->
+							<source srcset="" media="(min-width: 992px)" />
+							<source srcset="" media="(min-width: 600px)" />
+							<img
+								:src="`${getImageUrl(productDetail[0].showcase[2].mobile)}`"
+								alt=""
+							/>
+						</picture>
+					</section>
+					<!-- otherProducts -->
+					<section class="moreProduct">
+						<h1>you may also like</h1>
+						<section class="card__container">
+							<section
+								v-for="prod in productDetail[0].otherProducts"
+								:key="prod.title"
+								class="card"
+							>
+								<picture class="showcase--two">
+									<source
+										:srcset="`${getImageUrl(prod.desktop)}`"
+										media="(min-width: 992px)"
+									/>
+									<source
+										:srcset="`${getImageUrl(prod.tablet)}`"
+										media="(min-width: 600px)"
+									/>
+									<img :src="`${getImageUrl(prod.mobile)}`" alt="" />
+								</picture>
+								<section class="card__info">
+									<h1>{{ prod.title }}</h1>
+									<router-link
+										:to="{
+											name: 'productDetail',
+											params: { id: `${prod.link}` },
+										}"
+										class="cta cta--prim"
+										>see product</router-link
+									>
+								</section>
+							</section>
+						</section>
+					</section>
+				</template>
 				<BaseCategoryLinks class="categoryLinks" />
 			</section>
 		</section>
@@ -179,21 +181,27 @@ import data from "@/data/data.json";
 import BaseCategoryLinks from "@/components/BaseCategoryLinks.vue";
 import BaseAbout from "@/components/BaseAbout.vue";
 import { useRouter } from "vue-router";
-import { ref, computed } from "vue";
+import { ref, computed, watchEffect, onUpdated } from "vue";
 const props = defineProps({
 	id: {
 		type: String,
 		required: true,
 	},
 });
-const product = props.id.split("/")[1];
-const category = props.id.split("/")[0];
+	const product = computed(()=>props.id.split("/")[1].toLowerCase());
+const category = computed(()=>props.id.split("/")[0]);
+	
+const productDetail = computed(()=> data[category.value].filter(
+		(e) => e.title.split(" ").join("-").toLowerCase() === product.value
+));
 
-let productDetail = computed(() => data[category].filter(
-		(e) => e.title.split(" ").join("-").toLowerCase() === product.toLowerCase()
-	)
-)
+onUpdated(() => {
 
+})	
+	
+
+watchEffect(() => {
+});
 
 function getImageUrl(name) {
 	return new URL(`/src/assets/images/${name}`, import.meta.url).href;
@@ -246,9 +254,9 @@ const decreaseCount = () => {
 	color: #000;
 	opacity: 0.5;
 }
-img {
-	/* width: 100%; */
-}
+/* img {
+	
+} */
 .price {
 	font-weight: 700;
 	font-size: 18px;
@@ -386,9 +394,7 @@ input,
 	text-transform: uppercase;
 	color: #000;
 	margin: 1em 0;
-
 }
-
 
 @media (min-width: 600px) {
 	.product__details {
@@ -400,9 +406,7 @@ input,
 	.product__content {
 		align-self: center;
 	}
-	img {
-		/* width: 100%; */
-	}
+
 	.product__details img {
 		max-height: 500px;
 		height: 100%;
@@ -447,11 +451,11 @@ input,
 	}
 	/*  */
 	.card__container {
-	/* display: grid; */
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: auto;
-	gap: 2em;
-}
+		/* display: grid; */
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto;
+		gap: 2em;
+	}
 }
 @media (min-width: 800px) {
 	.product__details {

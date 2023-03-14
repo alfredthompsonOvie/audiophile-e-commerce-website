@@ -65,7 +65,7 @@
 					"tablet": "image-zx9-speaker-tablet-otherProduct.svg",
 					"mobile": "image-zx9-speaker-mobile-otherProduct.svg",
 					"title": "ZX9 SPEAKER",
-					"link": "headphones/ZX9-SPEAKER"
+					"link": "speakers/ZX9-SPEAKER"
 				}
 				]
 		},
@@ -96,7 +96,30 @@
 				{ "User_Manual": 1 },
 				{ "3.5mm_5m_Audio_Cable": 1 }
 			],
-			"showcase": ["", "", ""]
+			"showcase": ["", "", ""],
+			"otherProducts": [
+				{
+					"desktop": "image-xx99-mark-II-desktop-otherProduct.svg",
+					"tablet": "image-xx99-mark-II-tablet-otherProduct.svg",
+					"mobile": "image-xx99-mark-II-mobile-otherProduct.svg",
+					"title": "XX99 Mark II",
+					"link": "headphones/XX99-Mark-II-Headphones"
+				},
+				{
+					"desktop": "image-xx59-desktop-otherProduct.svg",
+					"tablet": "image-xx59-tablet-otherProduct.svg",
+					"mobile": "image-xx59-mobile-otherProduct.svg",
+					"title": "XX59",
+					"link": "headphones/XX59-Headphones"
+				},
+				{
+					"desktop": "image-zx9-speaker-desktop-otherProduct.svg",
+					"tablet": "image-zx9-speaker-tablet-otherProduct.svg",
+					"mobile": "image-zx9-speaker-mobile-otherProduct.svg",
+					"title": "ZX9 SPEAKER",
+					"link": "speakers/ZX9-SPEAKER"
+				}
+				]
 		},
 		{
 			"new": false,
@@ -125,7 +148,30 @@
 				{ "User_Manual": 1 },
 				{ "3.5mm_5m_Audio_Cable": 1 }
 			],
-			"showcase": ["", "", ""]
+			"showcase": ["", "", ""],
+			"otherProducts": [
+				{
+					"desktop": "image-xx99-mark-II-desktop-otherProduct.svg",
+					"tablet": "image-xx99-mark-II-tablet-otherProduct.svg",
+					"mobile": "image-xx99-mark-II-mobile-otherProduct.svg",
+					"title": "XX99 Mark II",
+					"link": "headphones/XX99-Mark-II-Headphones"
+				},
+				{
+					"desktop": "image-xx99-mark-I-desktop-otherProduct.svg",
+					"tablet": "image-xx99-mark-I-tablet-otherProduct.svg",
+					"mobile": "image-xx99-mark-I-mobile-otherProduct.svg",
+					"title": "XX99 Mark I",
+					"link": "headphones/XX99-Mark-I-Headphones"
+				},
+				{
+					"desktop": "image-zx9-speaker-desktop-otherProduct.svg",
+					"tablet": "image-zx9-speaker-tablet-otherProduct.svg",
+					"mobile": "image-zx9-speaker-mobile-otherProduct.svg",
+					"title": "ZX9 SPEAKER",
+					"link": "speakers/ZX9-SPEAKER"
+				}
+				]
 		}
 	],
 	"speakers": [
@@ -137,7 +183,6 @@
 				"mobile": "image-zx9-speaker-mobile-Group3.svg"
 			},
 			"detailsPreviewImage": {
-				
 				"desktop": "image-zx9-speaker-desktop-details.svg",
 				"tablet": "image-zx9-speaker-tablet-details.svg",
 				"mobile": "image-zx9-speaker-mobile-details.svg"
@@ -157,7 +202,30 @@
 				{ "3.5mm_10m_Audio_cable": 1 },
 				{ "10m_Optical_Cable": 1 }
 			],
-			"showcase": ["", "", ""]
+			"showcase": ["", "", ""],
+			"otherProducts": [
+				{
+					"desktop": "image-zx7-speaker-desktop-otherProduct.svg",
+					"tablet": "image-zx7-speaker-tablet-otherProduct.svg",
+					"mobile": "image-zx7-speaker-mobile-otherProduct.svg",
+					"title": "ZX7 Speaker",
+					"link": "speakers/ZX7-SPEAKER"
+				},
+				{
+					"desktop": "image-xx99-mark-I-desktop-otherProduct.svg",
+					"tablet": "image-xx99-mark-I-tablet-otherProduct.svg",
+					"mobile": "image-xx99-mark-I-mobile-otherProduct.svg",
+					"title": "XX99 Mark I",
+					"link": "headphones/XX99-Mark-I-Headphones"
+				},
+				{
+					"desktop": "image-xx59-desktop-otherProduct.svg",
+					"tablet": "image-xx59-tablet-otherProduct.svg",
+					"mobile": "image-xx59-mobile-otherProduct.svg",
+					"title": "XX59",
+					"link": "headphones/XX59-Headphones"
+				}
+				]
 		},
 		{
 			"new": false,
@@ -187,7 +255,30 @@
 				{ "3.5mm_7.5m_Audio_cable": 1 },
 				{ "7.5m_Optical_Cable": 1 }
 			],
-			"showcase": ["", "", ""]
+			"showcase": ["", "", ""],
+			"otherProducts": [
+				{
+					"desktop": "image-zx9-speaker-desktop-otherProduct.svg",
+					"tablet": "image-zx9-speaker-tablet-otherProduct.svg",
+					"mobile": "image-zx9-speaker-mobile-otherProduct.svg",
+					"title": "ZX9 Speaker",
+					"link": "speakers/ZX9-SPEAKER"
+				},
+				{
+					"desktop": "image-xx99-mark-I-desktop-otherProduct.svg",
+					"tablet": "image-xx99-mark-I-tablet-otherProduct.svg",
+					"mobile": "image-xx99-mark-I-mobile-otherProduct.svg",
+					"title": "XX99 Mark I",
+					"link": "headphones/XX99-Mark-I-Headphones"
+				},
+				{
+					"desktop": "image-xx59-desktop-otherProduct.svg",
+					"tablet": "image-xx59-tablet-otherProduct.svg",
+					"mobile": "image-xx59-mobile-otherProduct.svg",
+					"title": "XX59",
+					"link": "headphones/XX59-Headphones"
+				}
+				]
 		}
 	],
 	"earphones": [
@@ -219,7 +310,30 @@
 				{ "USB-C_Charging_Cable": 1 },
 				{ "Travel_Pouch": 1 }
 			],
-			"showcase": ["", "", ""]
+			"showcase": ["", "", ""],
+			"otherProducts": [
+				{
+					"desktop": "image-xx99-mark-I-desktop-otherProduct.svg",
+					"tablet": "image-xx99-mark-I-tablet-otherProduct.svg",
+					"mobile": "image-xx99-mark-I-mobile-otherProduct.svg",
+					"title": "XX99 Mark I",
+					"link": "headphones/XX99-Mark-I-Headphones"
+				},
+				{
+					"desktop": "image-xx59-desktop-otherProduct.svg",
+					"tablet": "image-xx59-tablet-otherProduct.svg",
+					"mobile": "image-xx59-mobile-otherProduct.svg",
+					"title": "XX59",
+					"link": "headphones/XX59-Headphones"
+				},
+				{
+					"desktop": "image-zx9-speaker-desktop-otherProduct.svg",
+					"tablet": "image-zx9-speaker-tablet-otherProduct.svg",
+					"mobile": "image-zx9-speaker-mobile-otherProduct.svg",
+					"title": "ZX9 SPEAKER",
+					"link": "speakers/ZX9-SPEAKER"
+				}
+				]
 		}
 	]
 }
