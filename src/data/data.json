@@ -28,7 +28,46 @@
 				{ "3.5mm_5m_Audio_Cable": 1 },
 				{ "Travel_Bag": 1 }
 			],
-			"featureImages": ["", "", ""]
+			"showcase": [
+				{
+					"desktop": "image-xx99-mark-II-headphones-desktop-details-dude-showcase.svg",
+					"tablet": "image-xx99-mark-II-headphones-tablet-details-dude-showcase.svg",
+					"mobile": "image-xx99-mark-II-headphones-mobile-details-dude-showcase.svg"
+				},
+				{
+					"desktop": "image-xx99-mark-II-headphones-desktop-details-table-showcase.svg",
+					"tablet": "image-xx99-mark-II-headphones-tablet-details-table-showcase.svg",
+					"mobile": "image-xx99-mark-II-headphones-mobile-details-table-showcase.svg"
+				},
+				{
+					"desktop": "image-xx99-mark-II-headphones-desktop-details-headphone-showcase.svg",
+					"tablet": "image-xx99-mark-II-headphones-tablet-details-headphone-showcase.svg",
+					"mobile": "image-xx99-mark-II-headphones-mobile-details-headphone-showcase.svg"
+				}
+				],
+			"otherProducts": [
+				{
+					"desktop": "image-xx99-mark-I-desktop-otherProduct.svg",
+					"tablet": "image-xx99-mark-I-tablet-otherProduct.svg",
+					"mobile": "image-xx99-mark-I-mobile-otherProduct.svg",
+					"title": "XX99 Mark I",
+					"link": "headphones/XX99-Mark-I-Headphones"
+				},
+				{
+					"desktop": "image-xx59-desktop-otherProduct.svg",
+					"tablet": "image-xx59-tablet-otherProduct.svg",
+					"mobile": "image-xx59-mobile-otherProduct.svg",
+					"title": "XX59",
+					"link": "headphones/XX59-Headphones"
+				},
+				{
+					"desktop": "image-zx9-speaker-desktop-otherProduct.svg",
+					"tablet": "image-zx9-speaker-tablet-otherProduct.svg",
+					"mobile": "image-zx9-speaker-mobile-otherProduct.svg",
+					"title": "ZX9 SPEAKER",
+					"link": "headphones/ZX9-SPEAKER"
+				}
+				]
 		},
 		{
 			"new": false,
@@ -57,7 +96,7 @@
 				{ "User_Manual": 1 },
 				{ "3.5mm_5m_Audio_Cable": 1 }
 			],
-			"featureImages": ["", "", ""]
+			"showcase": ["", "", ""]
 		},
 		{
 			"new": false,
@@ -86,7 +125,7 @@
 				{ "User_Manual": 1 },
 				{ "3.5mm_5m_Audio_Cable": 1 }
 			],
-			"featureImages": ["", "", ""]
+			"showcase": ["", "", ""]
 		}
 	],
 	"speakers": [
@@ -118,7 +157,7 @@
 				{ "3.5mm_10m_Audio_cable": 1 },
 				{ "10m_Optical_Cable": 1 }
 			],
-			"featureImages": ["", "", ""]
+			"showcase": ["", "", ""]
 		},
 		{
 			"new": false,
@@ -148,7 +187,7 @@
 				{ "3.5mm_7.5m_Audio_cable": 1 },
 				{ "7.5m_Optical_Cable": 1 }
 			],
-			"featureImages": ["", "", ""]
+			"showcase": ["", "", ""]
 		}
 	],
 	"earphones": [
@@ -180,7 +219,7 @@
 				{ "USB-C_Charging_Cable": 1 },
 				{ "Travel_Pouch": 1 }
 			],
-			"featureImages": ["", "", ""]
+			"showcase": ["", "", ""]
 		}
 	]
 }

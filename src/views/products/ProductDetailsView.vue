@@ -41,20 +41,32 @@
 
 							<form>
 								<section class="form__group">
-									<button 
-									type="button" 
-									class="btn--decreaseQuantity"
-									@click.prevent="decreaseCount"
-									>-</button>
+									<button
+										type="button"
+										class="btn--decreaseQuantity"
+										@click.prevent="decreaseCount"
+									>
+										-
+									</button>
 									<label for="productQuantity"></label>
-									<input type="text" name="productQuantity" id="productQuantity" class="form__control" v-model="productQuantity">
-									<button 
-									type="button" 
-									class="btn--increaseQuantity"
-									@click.prevent="increaseCount"
-									>+</button>
+									<input
+										type="text"
+										name="productQuantity"
+										id="productQuantity"
+										class="form__control"
+										v-model="productQuantity"
+									/>
+									<button
+										type="button"
+										class="btn--increaseQuantity"
+										@click.prevent="increaseCount"
+									>
+										+
+									</button>
 								</section>
-								<button type="submit" class="cta cta--prim submit">Add to cart</button>
+								<button type="submit" class="cta cta--prim submit">
+									Add to cart
+								</button>
 							</form>
 						</section>
 					</section>
@@ -91,23 +103,70 @@
 				<!-- showcase -->
 				<section class="showcase">
 					<picture class="showcase--one">
-						<source srcset="" media="(min-width: 992px)">
-						<source srcset="" media="(min-width: 992px)">
-						<img src="" alt="">
+						<source srcset="" media="(min-width: 992px)" />
+						<source srcset="" media="(min-width: 600px)" />
+						<img
+							:src="`${getImageUrl(productDetail[0].showcase[0].mobile)}`"
+							alt=""
+						/>
+						<!---->
+						<!-- {{ productDetail[0].showcase[0].mobile }}
+						{{ productDetail[0].showcase[1].mobile }}
+						{{ productDetail[0].showcase[2].mobile }} -->
 					</picture>
 					<picture class="showcase--two">
-						<source srcset="" media="(min-width: 992px)">
-						<source srcset="" media="(min-width: 992px)">
-						<img src="" alt="">
+						<source srcset="" media="(min-width: 992px)" />
+						<source srcset="" media="(min-width: 600px)" />
+						<img
+							:src="`${getImageUrl(productDetail[0].showcase[1].mobile)}`"
+							alt=""
+						/>
 					</picture>
 					<picture class="showcase--three">
-						<source srcset="" media="(min-width: 992px)">
-						<source srcset="" media="(min-width: 992px)">
-						<img src="" alt="">
+						<!-- <source :srcset="`${getImageUrl(productDetail[0].showcase[2].desktop)}`" media="(min-width: 992px)">
+						<source :srcset="`${getImageUrl(productDetail[0].showcase[2].tablet)}`" media="(min-width: 600px)"> -->
+						<source srcset="" media="(min-width: 992px)" />
+						<source srcset="" media="(min-width: 600px)" />
+						<img
+							:src="`${getImageUrl(productDetail[0].showcase[2].mobile)}`"
+							alt=""
+						/>
 					</picture>
 				</section>
 				<!-- otherProducts -->
-				<section class="moreProduct"></section>
+				<section class="moreProduct">
+					<h1>you may also like</h1>
+					<section class="card__container">
+						<section
+							v-for="prod in productDetail[0].otherProducts"
+							:key="prod.title"
+							class="card"
+						>
+							<picture class="showcase--two">
+								<source
+									:srcset="`${getImageUrl(prod.desktop)}`"
+									media="(min-width: 992px)"
+								/>
+								<source
+									:srcset="`${getImageUrl(prod.tablet)}`"
+									media="(min-width: 600px)"
+								/>
+								<img :src="`${getImageUrl(prod.mobile)}`" alt="" />
+							</picture>
+							<section class="card__info">
+								<h1>{{ prod.title }}</h1>
+								<router-link
+									:to="{
+										name: 'productDetail',
+										params: { id: `${prod.link}` },
+									}"
+									class="cta cta--prim"
+									>see product</router-link
+								>
+							</section>
+						</section>
+					</section>
+				</section>
 				<BaseCategoryLinks class="categoryLinks" />
 			</section>
 		</section>
@@ -120,7 +179,7 @@ import data from "@/data/data.json";
 import BaseCategoryLinks from "@/components/BaseCategoryLinks.vue";
 import BaseAbout from "@/components/BaseAbout.vue";
 import { useRouter } from "vue-router";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const props = defineProps({
 	id: {
 		type: String,
@@ -130,9 +189,12 @@ const props = defineProps({
 const product = props.id.split("/")[1];
 const category = props.id.split("/")[0];
 
-const productDetail = data[category].filter(
-	(e) => e.title.split(" ").join("-").toLowerCase() === product.toLowerCase()
-);
+let productDetail = computed(() => data[category].filter(
+		(e) => e.title.split(" ").join("-").toLowerCase() === product.toLowerCase()
+	)
+)
+
+
 function getImageUrl(name) {
 	return new URL(`/src/assets/images/${name}`, import.meta.url).href;
 }
@@ -143,14 +205,14 @@ const handleClick = () => {
 
 const productQuantity = ref(1);
 const increaseCount = () => {
-	return productQuantity.value++
-}
+	return productQuantity.value++;
+};
 const decreaseCount = () => {
 	if (productQuantity.value === 1) {
-		return 1
+		return 1;
 	}
-	return productQuantity.value--
-}
+	return productQuantity.value--;
+};
 </script>
 
 <style scoped>
@@ -207,7 +269,9 @@ form {
 	align-items: center;
 }
 .btn--increaseQuantity,
-.btn--decreaseQuantity, .product__quantity, .form__control {
+.btn--decreaseQuantity,
+.product__quantity,
+.form__control {
 	background-color: #f1f1f1;
 	font-weight: 700;
 	line-height: 18px;
@@ -216,10 +280,11 @@ form {
 	color: #000;
 }
 .btn--increaseQuantity,
-.btn--decreaseQuantity, input, .cta {
+.btn--decreaseQuantity,
+input,
+.cta {
 	/* font-size: clamp(10px, 2vw, 13px); */
 	font-size: 13px;
-
 }
 .btn--increaseQuantity,
 .btn--decreaseQuantity {
@@ -234,7 +299,6 @@ form {
 	line-height: 0;
 	max-width: 60px;
 }
-
 
 .cta {
 	/* flex: 1; */
@@ -274,6 +338,58 @@ form {
 	padding-inline: 0;
 }
 
+.showcase {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	gap: 1em;
+	/* background-color: red; */
+	margin-top: 3em;
+}
+.showcase img {
+	border-radius: 8px;
+	width: 100%;
+}
+
+.moreProduct {
+	margin-top: 4em;
+}
+.moreProduct h1 {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 36px;
+	text-align: center;
+	letter-spacing: 1.14286px;
+	text-transform: uppercase;
+	color: #000;
+}
+.card__container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	gap: 3.5em;
+	margin-top: 2em;
+	/* justify-content: center; */
+}
+.card img {
+	width: 100%;
+}
+.card__info {
+	text-align: center;
+}
+.card h1 {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 33px;
+	text-align: center;
+	letter-spacing: 1.71429px;
+	text-transform: uppercase;
+	color: #000;
+	margin: 1em 0;
+
+}
+
+
 @media (min-width: 600px) {
 	.product__details {
 		display: grid;
@@ -305,6 +421,37 @@ form {
 	.contents h1 {
 		margin-top: 0;
 	}
+	.showcase {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, auto);
+		/* gap: 1em;
+	margin-top: 3em; */
+	}
+	.showcase--one {
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.showcase--two {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.showcase--three {
+		grid-row: 1/-1;
+		grid-column: 2;
+	}
+	.showcase img {
+		/* width: 100%; */
+		object-fit: cover;
+		height: 100%;
+	}
+	/*  */
+	.card__container {
+	/* display: grid; */
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	gap: 2em;
+}
 }
 @media (min-width: 800px) {
 	.product__details {
