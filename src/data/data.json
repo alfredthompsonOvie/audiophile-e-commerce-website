@@ -8,7 +8,6 @@
 				"mobile": "image-xx99-mark-II-headphones-mobile-Group3.svg"
 			},
 			"detailsPreviewImage": {
-				
 				"desktop": "image-xx99-mark-II-headphones-desktop-details.svg",
 				"tablet": "image-xx99-mark-II-headphones-tablet-details.svg",
 				"mobile": "image-xx99-mark-II-headphones-mobile-details.svg"
@@ -44,7 +43,7 @@
 					"tablet": "image-xx99-mark-II-headphones-tablet-details-headphone-showcase.svg",
 					"mobile": "image-xx99-mark-II-headphones-mobile-details-headphone-showcase.svg"
 				}
-				],
+			],
 			"otherProducts": [
 				{
 					"desktop": "image-xx99-mark-I-desktop-otherProduct.svg",
@@ -67,7 +66,7 @@
 					"title": "ZX9 SPEAKER",
 					"link": "speakers/ZX9-SPEAKER"
 				}
-				]
+			]
 		},
 		{
 			"new": false,
@@ -77,7 +76,6 @@
 				"mobile": "image-xx99-mark-I-headphones-mobile-Group3.svg"
 			},
 			"detailsPreviewImage": {
-				
 				"desktop": "image-xx99-mark-I-headphones-desktop-details.svg",
 				"tablet": "image-xx99-mark-I-headphones-tablet-details.svg",
 				"mobile": "image-xx99-mark-I-headphones-mobile-details.svg"
@@ -96,7 +94,23 @@
 				{ "User_Manual": 1 },
 				{ "3.5mm_5m_Audio_Cable": 1 }
 			],
-			"showcase": ["", "", ""],
+			"showcase": [
+				{
+					"desktop": "image-xx99-mark-I-headphones-desktop-product-one.svg",
+					"tablet": "image-xx99-mark-I-headphones-tablet-product-one.svg",
+					"mobile": "image-xx99-mark-I-headphones-mobile-product-one.svg"
+				},
+				{
+					"desktop": "image-xx99-mark-I-headphones-desktop-product-two.svg",
+					"tablet": "image-xx99-mark-I-headphones-tablet-product-two.svg",
+					"mobile": "image-xx99-mark-I-headphones-mobile-product-two.svg"
+				},
+				{
+					"desktop": "image-xx99-mark-I-headphones-desktop-product-three.svg",
+					"tablet": "image-xx99-mark-I-headphones-tablet-product-three.svg",
+					"mobile": "image-xx99-mark-I-headphones-mobile-product-three.svg"
+				}
+			],
 			"otherProducts": [
 				{
 					"desktop": "image-xx99-mark-II-desktop-otherProduct.svg",
@@ -119,7 +133,7 @@
 					"title": "ZX9 SPEAKER",
 					"link": "speakers/ZX9-SPEAKER"
 				}
-				]
+			]
 		},
 		{
 			"new": false,
@@ -129,7 +143,6 @@
 				"mobile": "image-xx59-headphones-mobile-Group3.svg"
 			},
 			"detailsPreviewImage": {
-				
 				"desktop": "image-xx59-headphones-desktop-details.svg",
 				"tablet": "image-xx59-headphones-tablet-details.svg",
 				"mobile": "image-xx59-headphones-mobile-details.svg"
@@ -148,7 +161,23 @@
 				{ "User_Manual": 1 },
 				{ "3.5mm_5m_Audio_Cable": 1 }
 			],
-			"showcase": ["", "", ""],
+			"showcase": [
+				{
+					"desktop": "image-xx59-headphones-desktop-product-one.svg",
+					"tablet": "image-xx59-headphones-tablet-product-one.svg",
+					"mobile": "image-xx59-headphones-mobile-product-one.svg"
+				},
+				{
+					"desktop": "image-xx59-headphones-desktop-product-two.svg",
+					"tablet": "image-xx59-headphones-tablet-product-two.svg",
+					"mobile": "image-xx59-headphones-mobile-product-two.svg"
+				},
+				{
+					"desktop": "image-xx59-headphones-desktop-product-three.svg",
+					"tablet": "image-xx59-headphones-tablet-product-three.svg",
+					"mobile": "image-xx59-headphones-mobile-product-three.svg"
+				}
+			],
 			"otherProducts": [
 				{
 					"desktop": "image-xx99-mark-II-desktop-otherProduct.svg",
@@ -171,7 +200,7 @@
 					"title": "ZX9 SPEAKER",
 					"link": "speakers/ZX9-SPEAKER"
 				}
-				]
+			]
 		}
 	],
 	"speakers": [
@@ -202,7 +231,23 @@
 				{ "3.5mm_10m_Audio_cable": 1 },
 				{ "10m_Optical_Cable": 1 }
 			],
-			"showcase": ["", "", ""],
+			"showcase": [
+				{
+					"desktop": "image-zx9-speaker-desktop-product-one.svg",
+					"tablet": "image-zx9-speaker-tablet-product-one.svg",
+					"mobile": "image-zx9-speaker-mobile-product-one.svg"
+				},
+				{
+					"desktop": "image-zx9-speaker-desktop-product-two.svg",
+					"tablet": "image-zx9-speaker-tablet-product-two.svg",
+					"mobile": "image-zx9-speaker-mobile-product-two.svg"
+				},
+				{
+					"desktop": "image-zx9-speaker-desktop-product-three.svg",
+					"tablet": "image-zx9-speaker-tablet-product-three.svg",
+					"mobile": "image-zx9-speaker-mobile-product-three.svg"
+				}
+			],
 			"otherProducts": [
 				{
 					"desktop": "image-zx7-speaker-desktop-otherProduct.svg",
@@ -225,7 +270,7 @@
 					"title": "XX59",
 					"link": "headphones/XX59-Headphones"
 				}
-				]
+			]
 		},
 		{
 			"new": false,
@@ -235,7 +280,6 @@
 				"mobile": "image-zx7-speaker-mobile-Group3.svg"
 			},
 			"detailsPreviewImage": {
-				
 				"desktop": "image-zx7-speaker-desktop-details.svg",
 				"tablet": "image-zx7-speaker-tablet-details.svg",
 				"mobile": "image-zx7-speaker-mobile-details.svg"
@@ -255,7 +299,23 @@
 				{ "3.5mm_7.5m_Audio_cable": 1 },
 				{ "7.5m_Optical_Cable": 1 }
 			],
-			"showcase": ["", "", ""],
+			"showcase": [
+				{
+					"desktop": "image-zx7-speaker-desktop-product-one.svg",
+					"tablet": "image-zx7-speaker-tablet-product-one.svg",
+					"mobile": "image-zx7-speaker-mobile-product-one.svg"
+				},
+				{
+					"desktop": "image-zx7-speaker-desktop-product-two.svg",
+					"tablet": "image-zx7-speaker-tablet-product-two.svg",
+					"mobile": "image-zx7-speaker-mobile-product-two.svg"
+				},
+				{
+					"desktop": "image-zx7-speaker-desktop-product-three.svg",
+					"tablet": "image-zx7-speaker-tablet-product-three.svg",
+					"mobile": "image-zx7-speaker-mobile-product-three.svg"
+				}
+			],
 			"otherProducts": [
 				{
 					"desktop": "image-zx9-speaker-desktop-otherProduct.svg",
@@ -278,7 +338,7 @@
 					"title": "XX59",
 					"link": "headphones/XX59-Headphones"
 				}
-				]
+			]
 		}
 	],
 	"earphones": [
@@ -290,7 +350,6 @@
 				"mobile": "image-yx1-wireless-earphones-mobile-Group3.svg"
 			},
 			"detailsPreviewImage": {
-				
 				"desktop": "image-yx1-wireless-earphones-desktop-details.svg",
 				"tablet": "image-yx1-wireless-earphones-tablet-details.svg",
 				"mobile": "image-yx1-wireless-earphones-mobile-details.svg"
@@ -310,7 +369,23 @@
 				{ "USB-C_Charging_Cable": 1 },
 				{ "Travel_Pouch": 1 }
 			],
-			"showcase": ["", "", ""],
+			"showcase": [
+				{
+					"desktop": "image-yx1-wireless-earphones-desktop-product-one.svg",
+					"tablet": "image-yx1-wireless-earphones-tablet-product-one.svg",
+					"mobile": "image-yx1-wireless-earphones-mobile-product-one.svg"
+				},
+				{
+					"desktop": "image-yx1-wireless-earphones-desktop-product-two.svg",
+					"tablet": "image-yx1-wireless-earphones-tablet-product-two.svg",
+					"mobile": "image-yx1-wireless-earphones-mobile-product-two.svg"
+				},
+				{
+					"desktop": "image-yx1-wireless-earphones-desktop-product-three.svg",
+					"tablet": "image-yx1-wireless-earphones-tablet-product-three.svg",
+					"mobile": "image-yx1-wireless-earphones-mobile-product-three.svg"
+				}
+			],
 			"otherProducts": [
 				{
 					"desktop": "image-xx99-mark-I-desktop-otherProduct.svg",
@@ -333,7 +408,7 @@
 					"title": "ZX9 SPEAKER",
 					"link": "speakers/ZX9-SPEAKER"
 				}
-				]
+			]
 		}
 	]
 }
