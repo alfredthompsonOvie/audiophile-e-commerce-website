@@ -9,6 +9,6 @@ import TheNavBAr from '@/components/TheNavBAr.vue';
 import TheFooter from '@/components/TheFooter.vue'
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

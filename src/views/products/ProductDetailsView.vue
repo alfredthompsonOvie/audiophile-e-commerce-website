@@ -40,7 +40,7 @@
 
 								<p class="price">{{ productDetail[0].price }}</p>
 
-								<form>
+								<section class="prodQan">
 									<section class="form__group">
 										<button
 											type="button"
@@ -65,10 +65,13 @@
 											+
 										</button>
 									</section>
-									<button type="submit" class="cta cta--prim submit">
+									<button 
+									type="submit" class="cta cta--prim submit"
+									@click.prevent="getItem"
+									>
 										Add to cart
 									</button>
-								</form>
+								</section>
 							</section>
 						</section>
 
@@ -181,8 +184,10 @@ import data from "@/data/data.json";
 import BaseCategoryLinks from "@/components/BaseCategoryLinks.vue";
 import BaseAbout from "@/components/BaseAbout.vue";
 import BaseGoBack from "@/components/BaseGoBack.vue";
-// import { useRouter } from "vue-router";
-import { ref, computed, watchEffect, onUpdated } from "vue";
+import { useRoute } from "vue-router";
+import { ref, computed, watch } from "vue";
+import { useCartStore } from "../../stores/cart";
+
 const props = defineProps({
 	id: {
 		type: String,
@@ -195,24 +200,25 @@ const category = computed(()=>props.id.split("/")[0]);
 const productDetail = computed(()=> data[category.value].filter(
 		(e) => e.title.split(" ").join("-").toLowerCase() === product.value
 ));
+const route = useRoute()
+const cart = useCartStore()
 
-onUpdated(() => {
+const productQuantity = ref(1);
 
-})	
-	
-
-watchEffect(() => {
-});
+watch(route, () => {
+	productQuantity.value = 1
+})
+watch(productQuantity, (newVal) => {
+	if (parseInt(newVal) === 0) {
+		productQuantity.value = 1
+		return;
+	}
+})
 
 function getImageUrl(name) {
 	return new URL(`/src/assets/images/${name}`, import.meta.url).href;
 }
-// const router = useRouter();
-// const handleClick = () => {
-// 	router.go(-1);
-// };
 
-const productQuantity = ref(1);
 const increaseCount = () => {
 	return productQuantity.value++;
 };
@@ -222,6 +228,16 @@ const decreaseCount = () => {
 	}
 	return productQuantity.value--;
 };
+
+const getItem = () => {
+	const item = {
+		prodImg: productDetail.value[0].previewImage.mobile,
+		prodName: productDetail.value[0].cartTitle,
+		prodPrice: productDetail.value[0].price,
+		prodQuantity: productQuantity.value
+	}
+	cart.addToCart(item);
+}
 </script>
 
 <style scoped>
@@ -265,7 +281,7 @@ const decreaseCount = () => {
 	letter-spacing: 1.28571px;
 	color: #000;
 }
-form {
+form, .prodQan {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;

@@ -13,6 +13,7 @@
 				"mobile": "image-xx99-mark-II-headphones-mobile-details.svg"
 			},
 			"title": "XX99 Mark II Headphones",
+			"cartTitle": "XX99 MK II",
 			"description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
 			"price": "$ 2,999",
 			"features": [
@@ -81,6 +82,7 @@
 				"mobile": "image-xx99-mark-I-headphones-mobile-details.svg"
 			},
 			"title": "XX99 Mark I Headphones",
+			"cartTitle": "XX99 MK I",
 			"description": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
 			"price": "$ 1,750",
 			"features": [
@@ -148,6 +150,7 @@
 				"mobile": "image-xx59-headphones-mobile-details.svg"
 			},
 			"title": "XX59 Headphones",
+			"cartTitle": "XX59",
 			"description": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
 			"price": "$ 899",
 			"features": [
@@ -217,6 +220,7 @@
 				"mobile": "image-zx9-speaker-mobile-details.svg"
 			},
 			"title": "ZX9 SPEAKER",
+			"cartTitle": "ZX9",
 			"description": "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
 			"price": "$ 4,500",
 			"features": [
@@ -285,6 +289,7 @@
 				"mobile": "image-zx7-speaker-mobile-details.svg"
 			},
 			"title": "ZX7 SPEAKER",
+			"cartTitle": "ZX7",
 			"description": "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
 			"price": "$ 3,500",
 			"features": [
@@ -355,6 +360,7 @@
 				"mobile": "image-yx1-wireless-earphones-mobile-details.svg"
 			},
 			"title": "YX1 WIRELESS EARPHONES",
+			"cartTitle": "YX1",
 			"description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
 			"price": "$ 599",
 			"features": [

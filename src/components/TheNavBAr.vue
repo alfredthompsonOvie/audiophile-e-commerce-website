@@ -69,12 +69,17 @@
 			<BaseNavMenu v-if="!isMobile" />
 			<!-- ^^^^^^^^^^menu^^^^^^^^^^^ -->
 			<!-- cart -->
-			<button type="button" class="btn--cart">
+			<button 
+			type="button" 
+			class="btn--cart"
+			@click.prevent="showCart = !showCart"
+			>
 				<img src="@/assets/images/cart.svg" alt="" />
 			</button>
 		</section>
 	</nav>
 	<section class="overlay" v-show="isMenuOpen"></section>
+	<BaseCart v-if="showCart" @close-cart="showCart = !showCart"/>
 </template>
 
 <script setup>
@@ -82,10 +87,13 @@ import { onMounted, ref } from "vue";
 import { gsap } from "gsap";
 import BaseCategoryLinks from "./BaseCategoryLinks.vue";
 import BaseNavMenu from "./BaseNavMenu.vue";
+import BaseCart from "./BaseCart.vue";
 
 const isMenuOpen = ref(null);
 const isMobile = ref(null);
 const windowWidth = ref(null);
+
+const showCart = ref(false);
 
 const checkScreen = () => {
 	windowWidth.value = window.innerWidth;
@@ -122,6 +130,10 @@ onMounted(() => {
 const handleClick = () => {
 	tl.reversed(!tl.reversed());
 };
+
+// const showCart = () => {
+
+// }
 </script>
 
 <style scoped>
