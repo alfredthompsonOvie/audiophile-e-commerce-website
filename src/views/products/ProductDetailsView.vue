@@ -2,10 +2,10 @@
 	<main>
 		<section class="grid product__DetailsPage">
 			<section class="grid__content">
-				<button type="button" class="btn--backBtn" @click.prevent="handleClick">
+				<!-- <button type="button" class="btn--backBtn" @click.prevent="handleClick">
 					go back
-				</button>
-
+				</button> -->
+				<BaseGoBack />
 				<template v-if="productDetail">
 					<section class="product__DetailsPage__contents">
 						<section class="product__details">
@@ -180,7 +180,8 @@
 import data from "@/data/data.json";
 import BaseCategoryLinks from "@/components/BaseCategoryLinks.vue";
 import BaseAbout from "@/components/BaseAbout.vue";
-import { useRouter } from "vue-router";
+import BaseGoBack from "@/components/BaseGoBack.vue";
+// import { useRouter } from "vue-router";
 import { ref, computed, watchEffect, onUpdated } from "vue";
 const props = defineProps({
 	id: {
@@ -206,10 +207,10 @@ watchEffect(() => {
 function getImageUrl(name) {
 	return new URL(`/src/assets/images/${name}`, import.meta.url).href;
 }
-const router = useRouter();
-const handleClick = () => {
-	router.go(-1);
-};
+// const router = useRouter();
+// const handleClick = () => {
+// 	router.go(-1);
+// };
 
 const productQuantity = ref(1);
 const increaseCount = () => {
@@ -245,7 +246,7 @@ const decreaseCount = () => {
 .product__DetailsPage {
 	margin-top: 1.5em;
 }
-.btn--backBtn {
+/* .btn--backBtn {
 	margin-bottom: 1.5em;
 	cursor: pointer;
 	font-weight: 500;
@@ -253,7 +254,7 @@ const decreaseCount = () => {
 	line-height: 25px;
 	color: #000;
 	opacity: 0.5;
-}
+} */
 /* img {
 	
 } */

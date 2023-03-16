@@ -42,23 +42,23 @@ const router = createRouter({
       name: 'speakers',
       component: () => import('../views/SpeakersView.vue')
     },
-    {
-      path: '/speakers/:id',
-      name: 'speakerDetails',
-      component: () => import('../views/products/SpeakersDetailsView.vue'),
-      props: true
-    },
+    // {
+    //   path: '/speakers/:id',
+    //   name: 'speakerDetails',
+    //   component: () => import('../views/products/SpeakersDetailsView.vue'),
+    //   props: true
+    // },
     {
       path: '/earphones',
       name: 'earphones',
       component: () => import('../views/EarphonesView.vue')
     },
-    {
-      path: '/earphones/:id',
-      name: 'earphoneDetails',
-      component: () => import('../views/products/EarphonesDetailsView.vue'),
-      props: true
-    },
+    // {
+    //   path: '/earphones/:id',
+    //   name: 'earphoneDetails',
+    //   component: () => import('../views/products/EarphonesDetailsView.vue'),
+    //   props: true
+    // },
     // {
     //   path: '/headphones/:id',
     //   name: 'headphonesDetails',
@@ -70,6 +70,11 @@ const router = createRouter({
       name: 'productDetail',
       component: () => import('../views/products/ProductDetailsView.vue'),
       props: true
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: () => import('../views/CheckoutView.vue')
     },
   ]
 })
