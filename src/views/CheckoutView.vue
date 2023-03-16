@@ -185,7 +185,44 @@ input::placeholder {
 }
 .form__group--radio input {
   width: initial;
+  /* color: #000;
+  background-color: #000; */
 }
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+  /* font: inherit; */
+  color: #d87d4a;
+  width: 0.1px;
+  height: 0.1px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  /* transform: translateY(-0.075em); */
+  display: grid;
+  place-content: center;
+  padding: .5em;
+}
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #d87d4a;
+}
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+/* input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+} */
 .form__group--radio label {
   margin-bottom: 0em;
 }
