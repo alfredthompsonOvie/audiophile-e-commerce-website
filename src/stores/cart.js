@@ -39,6 +39,7 @@ export const useCartStore = defineStore('cart', () => {
   // const calcTotalPrice = () => {
 
   // }
+  // remove this line
 
   return {
     itemsCount,
