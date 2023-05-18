@@ -1,5 +1,8 @@
 <template>
-	<section class="cart__wrapper grid">
+	<section 
+	class="cart__wrapper"
+	@click.prevent.self="handleClick"
+	>
 		<section class="cart">
 			<header>
 				<h1>
@@ -10,100 +13,105 @@
 					class="btn btn--removeAll"
 					type="button"
 					@click.prevent="removeAllItems"
+					v-show="numberOfItems"
 				>
 					Remove all
 				</button>
 			</header>
-			
-      
-      <!-- <ul class="cart__items">
-				<li>
-					<img src="" alt="" />
-					<p>
-						<span></span>
-						<span></span>
-					</p>
-				</li>
-			</ul> -->
 
-      <section class="cartList">
-       <cartItem  
-       v-for="item in cart.displayItems"
-        :key="item.prodName"
-        :item="item"
-        />
-      </section>
+			<section class="cartList">
+				<template v-if="numberOfItems">
+					<cartItem
+						v-for="item in cart.displayItems"
+						:key="item.prodName"
+						:item="item"
+					/>
+				</template>
+				<p class="emptyCart" v-else>
+					Your cart is empty!
+				</p>
+			</section>
 
-      <section class="cartTotal">
-        <p>total</p>
-        <p>${{ cart.totalPrice }}</p>
-      </section>
-
+			<template v-if="numberOfItems">
+				<section class="cartTotal">
+					<p>total</p>
+					<p class="totalAmount">$ {{ cart.totalPrice.toLocaleString("en-US") }}</p>
+				</section>
+				<button class="cta cta--prim">checkout</button>
+			</template>
 		</section>
-    <section 
-    class="overlay"
-    @click.prevent="handleClick"
-    ></section>
 	</section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import cartItem from "./CartItem.vue";
 import { useCartStore } from "../stores/cart";
 
-const numberOfItems = ref(3);
-// const prodQuantity = ref(1)
-// const total = ref(5, 396)
 const emit = defineEmits(['closeCart'])
 
-const cart = useCartStore()
+const cart = useCartStore();
+
+// const numberOfItems = ref(cart.itemsCount);
+const numberOfItems = computed(() => {
+	return cart.itemsCount
+})
 
 const removeAllItems = () => {
-  console.log("remove all");
-  cart.removeAllItems();
+	console.log("remove all");
+	cart.removeAllItems();
 };
 const handleClick = () => {
   emit('closeCart')
+	// console.log("self");
 }
-
 </script>
 
 <style scoped>
 .cart__wrapper {
-padding-top: 2em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding-top: 2em;
+	background-color: rgba(0, 0, 0, 0.4);
+	/* background-color: rgba(0, 0, 0, 1); */
+	z-index: 10;
 
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-rows: auto;
 }
-.overlay{
-  position: absolute;
-  position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: #000;
-opacity: .4;
-z-index: 2;
-}
+/* .overlay {
+	position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.4;
+	z-index: 2;
+} */
 .cart {
-  z-index: 5;
+	grid-column: 2;
+	align-self: start;
 	border-radius: 8px;
 	background-color: #fff;
-	/* background-color: #ff0; */
 	max-width: 300px;
 	max-width: 350px;
-  width: 100%;
+	width: 100%;
 	margin-left: auto;
-  padding: 1.5em;
-  /* padding: 1.5em 1.5em; */
-  opacity: 1;
-  grid-column: 2;
-  align-self: start;
+	padding: 1.5em;
+	opacity: 1;
+	z-index: 5;
+	margin-top: 5em;
 }
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 header h1 {
 	font-weight: 700;
@@ -124,11 +132,24 @@ header h1 {
 	opacity: 0.5;
 }
 .cartList {
-  margin: 1em 0;
+	margin: 1em 0;
 }
 .cartTotal {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.cta--prim {
+	color: #fff;
+	width: 100%;
+	margin-top: 1em;
+}
+.emptyCart {
+	text-align: center;
+	font-style: italic;
+	opacity: .8;
+}
+.totalAmount {
+	font-weight: 700;
 }
 </style>

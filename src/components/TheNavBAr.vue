@@ -75,11 +75,16 @@
 			@click.prevent="showCart = !showCart"
 			>
 				<img src="@/assets/images/cart.svg" alt="" />
+				<transition name="fade" appear>
+					<span class="itemsInCart" v-if="store.itemsCount">{{ store.itemsCount }}</span>
+				</transition>
 			</button>
 		</section>
 	</nav>
 	<section class="overlay" v-show="isMenuOpen"></section>
-	<BaseCart v-if="showCart" @close-cart="showCart = !showCart"/>
+	<Transition name="fade" appear>
+		<BaseCart v-if="showCart" @close-cart="showCart = !showCart"/>
+	</Transition>
 </template>
 
 <script setup>
@@ -88,12 +93,14 @@ import { gsap } from "gsap";
 import BaseCategoryLinks from "./BaseCategoryLinks.vue";
 import BaseNavMenu from "./BaseNavMenu.vue";
 import BaseCart from "./BaseCart.vue";
+import { useCartStore } from "../stores/cart";
 
 const isMenuOpen = ref(null);
 const isMobile = ref(null);
 const windowWidth = ref(null);
 
 const showCart = ref(false);
+const store = useCartStore();
 
 const checkScreen = () => {
 	windowWidth.value = window.innerWidth;
@@ -164,6 +171,25 @@ nav {
 }
 
 /* nav menu */
+.btn--cart {
+	position: relative;
+}
+
+.itemsInCart {
+	background-color: var(--grayishWhite);
+	position: absolute;
+	top: -0.8em;
+	left: 1.6em;
+	padding: .2em;
+	border-radius: 50%;
+	font-size: .7rem;
+}
+.fade-enter-from, .fade-leave-to {
+	opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+	transition: .5s all linear;
+}
 
 @media (min-width: 600px) {
 	nav {

@@ -38,7 +38,7 @@
 									{{ productDetail[0].description }}
 								</p>
 
-								<p class="price">{{ productDetail[0].price }}</p>
+								<p class="price">$ {{ formatNumber(productDetail[0].price) }}</p>
 
 								<section class="prodQan">
 									<section class="form__group">
@@ -237,6 +237,11 @@ const getItem = () => {
 		prodQuantity: productQuantity.value
 	}
 	cart.addToCart(item);
+	productQuantity.value = 1;
+}
+
+function formatNumber(num) {
+	return parseInt(num).toLocaleString("en-US")
 }
 </script>
 

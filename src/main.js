@@ -15,12 +15,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
 // import { faCartShopping } from '@fortawesome/free-light-svg-icons'
 // import { faBars, faXmark } from '@fortawesome/free-regular-svg-icons'
-import { faCartShopping, faBars, faXmark, faAngleRight  } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faBars, faXmark, faAngleRight, faTrash  } from '@fortawesome/free-solid-svg-icons'
 import { faSquareFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons'
 
 
 /* add icons to the library */
-library.add(faCartShopping, faBars, faXmark, faSquareFacebook, faTwitter, faInstagram, faAngleRight)
+library.add(faCartShopping, faBars, faXmark, faSquareFacebook, faTwitter, faInstagram, faAngleRight, faTrash)
 
 
 const app = createApp(App)
