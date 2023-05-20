@@ -37,7 +37,7 @@
 					<p>total</p>
 					<p class="totalAmount">$ {{ cart.totalPrice.toLocaleString("en-US") }}</p>
 				</section>
-				<button class="cta cta--prim">checkout</button>
+				<button class="cta cta--prim" @click.prevent="goToCheckout">checkout</button>
 			</template>
 		</section>
 	</section>
@@ -47,6 +47,8 @@
 import { computed } from "vue";
 import cartItem from "./CartItem.vue";
 import { useCartStore } from "../stores/cart";
+// import { Router } from "vue-router";
+import { useRouter } from "vue-router";
 
 const emit = defineEmits(['closeCart'])
 
@@ -64,6 +66,12 @@ const removeAllItems = () => {
 const handleClick = () => {
   emit('closeCart')
 	// console.log("self");
+}
+const router = useRouter();
+const goToCheckout = () => {
+	// handleClick();
+	emit('closeCart')
+	router.push({name: 'checkout'})
 }
 </script>
 
