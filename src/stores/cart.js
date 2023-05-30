@@ -3,6 +3,8 @@ import { defineStore } from "pinia";
 
 export const useCartStore = defineStore("cart", () => {
 	const items = ref([]);
+	const vat = computed(() => 1079)
+	const shipping = computed(()=> 50)
 	const totalPrice = computed(() => {
 		let total;
 		if (items.value.length === 0) {
@@ -21,6 +23,7 @@ export const useCartStore = defineStore("cart", () => {
 
 		return total;
 	});
+	const grandTotal = computed(()=> shipping.value + totalPrice.value)
 	const itemsCount = computed(() => items.value.length);
 	const displayItems = computed(() => items.value);
 
@@ -84,6 +87,10 @@ export const useCartStore = defineStore("cart", () => {
 		totalPrice,
     incrementItemQuantity,
     decreaseQuantity,
-    deleteItem
+		deleteItem,
+		
+		vat,
+		shipping,
+		grandTotal
 	};
 });

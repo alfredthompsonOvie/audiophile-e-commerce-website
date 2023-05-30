@@ -9,7 +9,11 @@
 						<fieldset>
 							<legend>billing details</legend>
 							<section class="form__group">
-								<label for="fullName" :class="{'label--error': errors.fullName}">Name</label>
+								<label
+									for="fullName"
+									:class="{ 'label--error': errors.fullName }"
+									>Name</label
+								>
 								<input
 									type="text"
 									placeholder="Alexei Ward"
@@ -17,12 +21,14 @@
 									v-model="fullName"
 									id="name"
 									class="form__control"
-									:class="{'form__control--error': errors.fullName}"
+									:class="{ 'form__control--error': errors.fullName }"
 								/>
 								<span class="error">{{ errors.fullName }}</span>
 							</section>
 							<section class="form__group form__group--email">
-								<label for="email"  :class="{'label--error': errors.email}">Email</label>
+								<label for="email" :class="{ 'label--error': errors.email }"
+									>Email</label
+								>
 								<input
 									type="email"
 									placeholder="alexei@mail.com"
@@ -34,10 +40,9 @@
 								<span class="error">{{ errors.email }}</span>
 							</section>
 							<section class="form__group form__group--tel">
-								<label 
-								for="tel"
-								:class="{'label--error': errors.tel}"
-								>Phone Number</label>
+								<label for="tel" :class="{ 'label--error': errors.tel }"
+									>Phone Number</label
+								>
 								<input
 									type="tel"
 									placeholder="+1 202-555-0136"
@@ -53,9 +58,9 @@
 						<fieldset>
 							<legend>shipping info</legend>
 							<section class="form__group form__group--address">
-								<label for="address"
-								:class="{'label--error': errors.address}"
-								>Address</label>
+								<label for="address" :class="{ 'label--error': errors.address }"
+									>Address</label
+								>
 								<input
 									type="text"
 									placeholder="1137 Williams Avenue"
@@ -67,9 +72,9 @@
 								<span class="error">{{ errors.address }}</span>
 							</section>
 							<section class="form__group form__group--zipCode">
-								<label for="zipCode"
-								:class="{'label--error': errors.zipCode}"
-								>ZIP Code</label>
+								<label for="zipCode" :class="{ 'label--error': errors.zipCode }"
+									>ZIP Code</label
+								>
 								<input
 									type="number"
 									placeholder="10001"
@@ -81,9 +86,9 @@
 								<span class="error">{{ errors.zipCode }}</span>
 							</section>
 							<section class="form__group form__group--city">
-								<label for="city"
-								:class="{'label--error': errors.city}"
-								>City</label>
+								<label for="city" :class="{ 'label--error': errors.city }"
+									>City</label
+								>
 								<input
 									type="text"
 									placeholder="New York"
@@ -95,9 +100,9 @@
 								<span class="error">{{ errors.city }}</span>
 							</section>
 							<section class="form__group form__group--city">
-								<label for="country"
-								:class="{'label--error': errors.country}"
-								>Country</label>
+								<label for="country" :class="{ 'label--error': errors.country }"
+									>Country</label
+								>
 								<input
 									type="text"
 									placeholder="United States"
@@ -113,7 +118,9 @@
 						<fieldset>
 							<legend>paymeny details</legend>
 							<section class="form__group--title form__group--paymentTypes">
-								<h1 :class="{'label--error': errors.paymentMethod}">Payment Method</h1>
+								<h1 :class="{ 'label--error': errors.paymentMethod }">
+									Payment Method
+								</h1>
 								<section class="payment__options">
 									<section
 										class="form__group form__group--radio"
@@ -127,9 +134,11 @@
 											value="e-money"
 											@change.prevent="handleChange"
 										/>
-										<label for="payment"
-										:class="{'label--error': errors.paymentMethod}"
-										>e-Money</label>
+										<label
+											for="payment"
+											:class="{ 'label--error': errors.paymentMethod }"
+											>e-Money</label
+										>
 									</section>
 
 									<section
@@ -143,12 +152,14 @@
 											value="cash on delivery"
 											id="payment"
 											@change.prevent="handleChange"
-											/>
-											<!-- 
+										/>
+										<!-- 
 											:checked="cashOnDelivery" -->
-										<label for="payment"
-										:class="{'label--error': errors.paymentMethod}"
-										>cash on delivery</label>
+										<label
+											for="payment"
+											:class="{ 'label--error': errors.paymentMethod }"
+											>cash on delivery</label
+										>
 									</section>
 									<span class="error">{{ errors.paymentMethod }}</span>
 								</section>
@@ -156,9 +167,11 @@
 
 							<template v-if="eMoney">
 								<section class="form__group form__group--eMoneyNumber">
-									<label for="eMoneyNumber"
-									:class="{'label--error': errors.eMoneyNumber}"
-									>e-Money Number</label>
+									<label
+										for="eMoneyNumber"
+										:class="{ 'label--error': errors.eMoneyNumber }"
+										>e-Money Number</label
+									>
 									<input
 										type="number"
 										placeholder=""
@@ -170,9 +183,11 @@
 									<span class="error">{{ errors.eMoneyNumber }}</span>
 								</section>
 								<section class="form__group form__group--eMoneyPin">
-									<label for="eMoneyPin"
-									:class="{'label--error': errors.eMoneyPin}"
-									>e-Money Pin</label>
+									<label
+										for="eMoneyPin"
+										:class="{ 'label--error': errors.eMoneyPin }"
+										>e-Money Pin</label
+									>
 									<input
 										type="number"
 										placeholder=""
@@ -184,62 +199,41 @@
 									<span class="error">{{ errors.eMoneyPin }}</span>
 								</section>
 							</template>
+							<section class="cashOnDeliveryContainer" v-if="cashOnDelivery">
+								<img src="@/assets/images/paymentOnDelivery.svg" alt="cash on delivery">
+								<p class="cashOnDeliveryText">
+									The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+								</p>
+							</section>
 						</fieldset>
 					</section>
 
 					<!-- SUMMARY IS SUPPOSED TO BE IN HERE -->
 					<section class="summary">
 						<h1>summary</h1>
-						<ul>
+						<!-- <ul>
 							<li v-for="item in store.displayItems" :key="item.prodName">
 								{{ item.prodName }}
 							</li>
-						</ul>
-						<section class="summaryList">
-							<section
-								v-for="item in store.displayItems"
-								:key="item.prodName"
-							>
-								<section>
-									<img :src="`${getImageUrl(item.prodImg)}`" alt="" />
-									<div>
-										<p class="prodName">{{ item.prodName }}</p>
-										<p class="prodPrice">
-											$ {{ formatNumber(item.prodPrice) }}
-										</p>
-									</div>
-									<p>x{{ item.prodQuantity }}</p>
-									<!-- <div class="btnContainer">
-										<button
-											type="button"
-											@click.prevent="decreaseQuantity(item)"
-										>
-											-
-										</button>
-										<span class="quantity">{{ item.prodQuantity }}</span>
-										<button
-											type="button"
-											@click.prevent="increaseQuantity(item)"
-										>
-											+
-										</button>
-									</div>
-									<button class="deleteItem" @click.prevent="deleteItem(item)">
-										<font-awesome-icon
-											icon="fa-solid fa-trash"
-											class="deleteItemIcon"
-										/>
-									</button> -->
-								</section>
+						</ul> -->
+						<!-- <section class="summaryList">
+							<section>
+								<SummaryItem
+									v-for="item in store.displayItems"
+									:key="item.prodName"
+									:product="item"
+								/>
 							</section>
-						</section>
+						</section> -->
+						<SummaryListVue />
 						<p>
-							<span></span>
-							<span></span>
+							<span class="title">total</span>
+							<span> $ {{ formatNumber(store.totalPrice) }} </span>
 						</p>
-						<button type="submit" class="cta cta--prim">
-							continue & pay
-						</button>
+						<p><span class="title">shipping</span> <span>$ {{ formatNumber(store.shipping) }} </span></p>
+						<p><span class="title">vat (included)</span> <span>$ {{ formatNumber(store.vat) }} </span></p>
+						<p><span class="title">grand total</span> <span class="grandTotalPrice">$ {{ formatNumber(store.grandTotal) }} </span></p>
+						<button type="submit" class="cta cta--prim">continue & pay</button>
 					</section>
 				</form>
 				<!-- <section class="checkout__container">
@@ -247,35 +241,48 @@
 			</section>
 		</section>
 	</main>
+	<CheckoutModalVue v-if="feedback"/>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import BaseGoBack from "../components/BaseGoBack.vue";
 import { useCartStore } from "../stores/cart";
-import { useField, useForm } from 'vee-validate';
-import { object, string, number } from 'yup';
+import { useField, useForm } from "vee-validate";
+import { object, string, number } from "yup";
+// import SummaryItem from "./SummaryItem.vue";
+import SummaryListVue from "../components/SummaryList.vue";
+import CheckoutModalVue from "../components/CheckoutModal.vue";
 
 const store = useCartStore();
 
 const eMoney = ref(false);
-const cashOnDelivery = ref();
+const cashOnDelivery = ref(false);
+
+const feedback = ref(false);
 
 const handleChange = ($event) => {
 	console.log($event.target.value);
-	if ($event.target.value === 'e-money') {
-		console.log('eMoney');
+	if ($event.target.value === "e-money") {
+		// console.log("eMoney");
 		eMoney.value = true;
+		cashOnDelivery.value = false;
 		return;
 	}
-	eMoney.value = false;
+	// more
+	if ($event.target.value === "cash on delivery") {
+		// console.log("eMoney");
+		cashOnDelivery.value = true;
+		eMoney.value = false;
+		return;
+	}
 };
-function getImageUrl(name) {
-	return new URL(`/src/assets/images/${name}`, import.meta.url).href;
-}
-function formatNumber(num) {
-	return parseInt(num).toLocaleString("en-US");
-}
+// function getImageUrl(name) {
+// 	return new URL(`/src/assets/images/${name}`, import.meta.url).href;
+// }
+// function formatNumber(num) {
+// 	return parseInt(num).toLocaleString("en-US");
+// }
 //!-------FORM~VALIDATION--------------------------------------
 
 const schema = object({
@@ -289,48 +296,47 @@ const schema = object({
 
 	// conditional validate e-moneyNumber and eMoneyPin if e-money is selected
 	paymentMethod: string().required("Wrong Format"),
-	eMoneyNumber: number()
-		.when(
-			"paymentMethod", {
-				is: (val)=> val === 'e-money',
-				then: (schema) => schema.typeError('Wrong Format').required("Wrong Format"),
-				otherwise: (schema) =>schema
-			}
-		),
-		eMoneyPin: number('must be a number')
-		.when(
-			"paymentMethod", {
-				is: (val)=> val == 'e-money',
-				then: (schema) => schema.typeError('Wrong Format').required("Wrong Format"),
-				otherwise: (schema) =>schema
-			}
-		),
+	eMoneyNumber: number().when("paymentMethod", {
+		is: (val) => val === "e-money",
+		then: (schema) => schema.typeError("Wrong Format").required("Wrong Format"),
+		otherwise: (schema) => schema,
+	}),
+	eMoneyPin: number("must be a number").when("paymentMethod", {
+		is: (val) => val == "e-money",
+		then: (schema) => schema.typeError("Wrong Format").required("Wrong Format"),
+		otherwise: (schema) => schema,
+	}),
 });
 
 const { handleSubmit, errors } = useForm({
 	validationSchema: schema,
 });
 
-const { value: fullName } = useField('fullName');
-const { value: email } = useField('email');
-const { value: tel } = useField('tel');
-const { value: address } = useField('address');
-const { value: zipCode } = useField('zipCode');
-const { value: city } = useField('city');
-const { value: country } = useField('country');
-const { value: paymentMethod } = useField('paymentMethod');
-const { value: eMoneyNumber } = useField('eMoneyNumber');
-const { value: eMoneyPin } = useField('eMoneyPin');
+const { value: fullName } = useField("fullName");
+const { value: email } = useField("email");
+const { value: tel } = useField("tel");
+const { value: address } = useField("address");
+const { value: zipCode } = useField("zipCode");
+const { value: city } = useField("city");
+const { value: country } = useField("country");
+const { value: paymentMethod } = useField("paymentMethod");
+const { value: eMoneyNumber } = useField("eMoneyNumber");
+const { value: eMoneyPin } = useField("eMoneyPin");
 
 const onSubmit = handleSubmit((values) => {
-	console.log(values);
-})
+	console.log(JSON.stringify(values, null, 2));
 
+	feedback.value = true;
+});
 
+function formatNumber(num) {
+	return parseInt(num).toLocaleString("en-US");
+}
 </script>
 
 <style scoped>
-	/* --main: #d87d4a;
+
+/* --main: #d87d4a;
 	--main-hover: #fbaf85;
 	--black: #000000;
 	--white: #ffffff;
@@ -412,7 +418,6 @@ input::placeholder {
 	border: 1px solid var(--main-hover);
 }
 .form__control--error {
-	
 	border: 2px solid var(--main-hover);
 	border: 2px solid var(--main);
 }
@@ -490,6 +495,25 @@ input[type="radio"]:checked::before {
 .form__group--radio label {
 	margin-bottom: 0em;
 }
+.cashOnDeliveryContainer {
+	grid-column: 1/-1;
+	display: flex;
+	align-items: flex-start;
+	gap: 1em;
+}
+.cashOnDeliveryText {
+	font-weight: 500;
+font-size: 15px;
+line-height: 25px;
+/* or 167% */
+
+
+color: #000000;
+
+mix-blend-mode: normal;
+opacity: 0.5;
+}
+
 .summary {
 	margin-top: 3em;
 }
@@ -515,6 +539,43 @@ input[type="radio"]:checked::before {
 
 	color: #ffffff;
 	width: 100%;
+}
+
+.summary p {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	margin-bottom: 1em;
+}
+.summary span.title {
+	/* color: var(); */
+	font-weight: 500;
+font-size: 15px;
+line-height: 25px;
+/* identical to box height, or 167% */
+
+
+color: #000000;
+
+mix-blend-mode: normal;
+opacity: 0.5;
+}
+.title + span {
+	font-weight: 700;
+	font-size: 18px;
+line-height: 25px;
+/* identical to box height */
+
+text-align: right;
+text-transform: uppercase;
+
+color: #000000;
+}
+span.grandTotalPrice {
+	color: var(--main);
+	font-weight: 700;
+
 }
 @media (min-width: 600px) {
 	.heading {
