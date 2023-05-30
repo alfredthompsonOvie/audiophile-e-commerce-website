@@ -1,36 +1,38 @@
 <template>
-	<ul class="dropdown">
-		<li class="dropdown__item menuItem">
-			<router-link :to="{ name: 'headphones' }" class="dropdown__link">
-				<img src="@/assets/images/image-headphone-menu.svg" alt="" />
-				<p>Headphones</p>
-				<span>
-					<span class="span__text"> shop </span>
-					<font-awesome-icon icon="fa-solid fa-angle-right" />
-				</span>
-			</router-link>
-		</li>
-		<li class="dropdown__item menuItem">
-			<router-link :to="{ name: 'speakers' }" class="dropdown__link">
-				<img src="@/assets/images/image-speakers-menu.svg" alt="" />
-				<p>Speakers</p>
-				<span>
-					<span class="span__text"> shop </span>
-					<font-awesome-icon icon="fa-solid fa-angle-right" />
-				</span>
-			</router-link>
-		</li>
-		<li class="dropdown__item menuItem">
-			<router-link :to="{ name: 'earphones' }" class="dropdown__link">
-				<img src="@/assets/images/image-earphone-menu.png" alt="" />
-				<p>Earphones</p>
-				<span>
-					<span class="span__text"> shop </span>
-					<font-awesome-icon icon="fa-solid fa-angle-right" />
-				</span>
-			</router-link>
-		</li>
-	</ul>
+	<section v-bind="$attrs">
+		<ul class="dropdown" >
+			<li class="dropdown__item menuItem">
+				<router-link :to="{ name: 'headphones' }" class="dropdown__link">
+					<img src="@/assets/images/image-headphone-menu.svg" alt="" />
+					<p>Headphones</p>
+					<span>
+						<span class="span__text"> shop </span>
+						<font-awesome-icon icon="fa-solid fa-angle-right" />
+					</span>
+				</router-link>
+			</li>
+			<li class="dropdown__item menuItem">
+				<router-link :to="{ name: 'speakers' }" class="dropdown__link">
+					<img src="@/assets/images/image-speakers-menu.svg" alt="" />
+					<p>Speakers</p>
+					<span>
+						<span class="span__text"> shop </span>
+						<font-awesome-icon icon="fa-solid fa-angle-right" />
+					</span>
+				</router-link>
+			</li>
+			<li class="dropdown__item menuItem">
+				<router-link :to="{ name: 'earphones' }" class="dropdown__link">
+					<img src="@/assets/images/image-earphone-menu.png" alt="" />
+					<p>Earphones</p>
+					<span>
+						<span class="span__text"> shop </span>
+						<font-awesome-icon icon="fa-solid fa-angle-right" />
+					</span>
+				</router-link>
+			</li>
+		</ul>
+	</section>
 </template>
 
 <script setup></script>

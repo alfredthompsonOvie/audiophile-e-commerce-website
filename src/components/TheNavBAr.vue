@@ -1,6 +1,6 @@
 <template>
-	<nav class="grid">
-		<section class="grid__content nav__content">
+	<nav class="grid navBar">
+		<section class="grid__content navBar__content">
 			<!-- hamburger -->
 			<section class="hamburger" v-if="isMobile">
 				<button class="openMenu" v-if="!isMenuOpen" @click="handleClick">
@@ -12,44 +12,15 @@
 			</section>
 
 			<router-link to="/" class="brand">
-				<img src="@/assets/images/audiophile.svg" alt="audiophile home button" />
+				<img
+					src="@/assets/images/audiophile.svg"
+					alt="audiophile home button"
+				/>
 			</router-link>
 
 			<!-- menu -->
 			<!-- mobile  -->
-			<!-- <ul class="dropdown" v-show="isMenuOpen">
-				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'headphones' }" class="dropdown__link">
-						<img src="@/assets/images/image-headphone-menu.svg" alt="" />
-						<p>Headphones</p>
-						<span>
-							<span class="span__text"> shop </span>
-							<font-awesome-icon icon="fa-solid fa-angle-right" />
-						</span>
-					</router-link>
-				</li>
-				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'speakers' }" class="dropdown__link">
-						<img src="@/assets/images/image-speakers-menu.svg" alt="" />
-						<p>Speakers</p>
-						<span>
-							<span class="span__text"> shop </span>
-							<font-awesome-icon icon="fa-solid fa-angle-right" />
-						</span>
-					</router-link>
-				</li>
-				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'earphones' }" class="dropdown__link">
-						<img src="@/assets/images/image-earphone-menu.png" alt="" />
-						<p>Earphones</p>
-						<span>
-							<span class="span__text"> shop </span>
-							<font-awesome-icon icon="fa-solid fa-angle-right" />
-						</span>
-					</router-link>
-				</li>
-			</ul> -->
-			<BaseCategoryLinks class="dropdown" v-show="isMenuOpen"/>
+			<BaseCategoryLinks class="mobileMenu" v-if="isMenuOpen"/>
 
 			<!-- desktop nav -->
 			<!-- <ul class="nav__menu" v-if="!isMobile">
@@ -69,21 +40,23 @@
 			<BaseNavMenu v-if="!isMobile" />
 			<!-- ^^^^^^^^^^menu^^^^^^^^^^^ -->
 			<!-- cart -->
-			<button 
-			type="button" 
-			class="btn--cart"
-			@click.prevent="showCart = !showCart"
+			<button
+				type="button"
+				class="btn--cart"
+				@click.prevent="showCart = !showCart"
 			>
 				<img src="@/assets/images/cart.svg" alt="" />
 				<transition name="fade" appear>
-					<span class="itemsInCart" v-if="store.itemsCount">{{ store.itemsCount }}</span>
+					<span class="itemsInCart" v-if="store.itemsCount">{{
+						store.itemsCount
+					}}</span>
 				</transition>
 			</button>
 		</section>
 	</nav>
-	<section class="overlay" v-show="isMenuOpen"></section>
+	<div class="overlay" v-if="isMenuOpen"></div>
 	<Transition name="fade" appear>
-		<BaseCart v-if="showCart" @close-cart="showCart = !showCart"/>
+		<BaseCart v-if="showCart" @close-cart="showCart = !showCart" />
 	</Transition>
 </template>
 
@@ -114,62 +87,79 @@ const checkScreen = () => {
 	return;
 };
 
-const tl = gsap.timeline({
-	reversed: true,
-	onStart: () => {
-		isMenuOpen.value = !isMenuOpen.value;
-	},
-	onReverseComplete: () => {
-		isMenuOpen.value = !isMenuOpen.value;
-	},
-});
+// const tl = gsap.timeline({
+// 	reversed: true,
+// 	onStart: () => {
+// 		isMenuOpen.value = !isMenuOpen.value;
+// 	},
+// 	onReverseComplete: () => {
+// 		isMenuOpen.value = !isMenuOpen.value;
+// 	},
+// });
 onMounted(() => {
 	checkScreen();
 	window.addEventListener("resize", checkScreen);
 
-	tl.from(".menuItem", {
-		autoAlpha: 0.01,
-		x: -50,
-		stagger: 0.3,
-	});
+	// tl.from(".mobileMenu .menuItem", {
+	// 	autoAlpha: 0.01,
+	// 	x: -50,
+	// 	stagger: 0.3,
+	// });
 });
 
 const handleClick = () => {
-	tl.reversed(!tl.reversed());
+	console.log("clicked");
+	// tl.reversed(!tl.reversed());
+	isMenuOpen.value = !isMenuOpen.value;
+
 };
-
-// const showCart = () => {
-
-// }
 </script>
 
 <style scoped>
-nav {
-	/* background-color: #000; */
+.navBar {
 	background-color: #0e0e0e;
-	height: 5em;
-	position: relative;
-	z-index: 99;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	width: 100%;
+	height: 6em;
+	z-index: 99;
 }
-.nav__content {
+.navBar__content {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+.hamburger {
+	position: relative;
+	z-index: 99;
+}
 .brand {
 	font-weight: 700;
+	position: relative;
+	z-index: 99;
 }
-.dropdown {
+.mobileMenu {
 	position: absolute;
-	top: 5em;
+	top: 0;
 	left: 0;
+	bottom: 0;
 	width: 100%;
-	padding: 5em 1em 1em;
-	background-color: #fff;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-rows: 10em auto;
 	z-index: 20;
 }
-
+.overlay {
+	background-color: rgba(0, 0, 0, 0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
 /* nav menu */
 .btn--cart {
 	position: relative;
@@ -180,56 +170,55 @@ nav {
 	position: absolute;
 	top: -0.8em;
 	left: 1.6em;
-	padding: .2em;
+	padding: 0.2em;
 	border-radius: 50%;
-	font-size: .7rem;
+	font-size: 0.7rem;
 }
-.fade-enter-from, .fade-leave-to {
+/* VUE TRANSITION =======================================================*/
+.fade-enter-from,
+.fade-leave-to {
 	opacity: 0;
 }
-.fade-enter-active, .fade-leave-active {
-	transition: .5s all linear;
+.fade-enter-active,
+.fade-leave-active {
+	transition: 0.5s all linear;
 }
-
 @media (min-width: 600px) {
 	nav {
 		border-bottom: 0;
 	}
-	.nav__content {
+	.navBar__content {
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
-
+	.mobileMenu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.2);
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 5em auto;
+		z-index: 20;
+	}
+	
 }
 @media (min-width: 600px) and (max-width: 991px) {
-	.nav__content {
+	.navBar__content {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
 		gap: 2em;
 	}
-	/* .dropdown {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 1em;
+	/* .dropdown__overlay {
 		padding: 5em 2em 4em;
-		border-bottom-left-radius: 20px;
-		border-bottom-right-radius: 20px;
 	} */
-	.dropdown {
-		padding: 5em 2em 4em;
-	}
 
-	/* .dropdown__item + .dropdown__item {
-		margin-top: 0;
-	}
-	.dropdown__item {
-		flex: 1;
-	} */
 	.btn--cart {
 		margin-left: auto;
 	}
-	.overlay {
+	/* .overlay {
 		background-color: rgba(0, 0, 0, 0.2);
 		position: absolute;
 		top: 0;
@@ -239,9 +228,9 @@ nav {
 		height: 100%;
 		width: 100%;
 		z-index: 10;
-	}
+	} */
 }
-@media (min-width: 992px){
+@media (min-width: 992px) {
 	nav {
 		background-color: #121212;
 	}

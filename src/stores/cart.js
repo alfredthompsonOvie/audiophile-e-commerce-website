@@ -74,6 +74,9 @@ export const useCartStore = defineStore("cart", () => {
 
   const deleteItem = (item) => {
     items.value = items.value.filter(el => el !== item)
+	}
+	function $reset() {
+    items.value = []
   }
 
 
@@ -91,6 +94,7 @@ export const useCartStore = defineStore("cart", () => {
 		
 		vat,
 		shipping,
-		grandTotal
+		grandTotal,
+		$reset,
 	};
 });

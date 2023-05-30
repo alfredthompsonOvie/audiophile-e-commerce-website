@@ -52,7 +52,7 @@ function formatNumber(num) {
 /* ====================SUMMARY============================ */
 section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1em;
 }
 section + section {

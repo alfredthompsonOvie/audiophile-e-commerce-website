@@ -225,7 +225,7 @@
 								/>
 							</section>
 						</section> -->
-						<SummaryListVue />
+						<SummaryListVue :products="store.displayItems"/>
 						<p>
 							<span class="title">total</span>
 							<span> $ {{ formatNumber(store.totalPrice) }} </span>
