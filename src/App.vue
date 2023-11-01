@@ -14,7 +14,6 @@ import TheFooter from '@/components/TheFooter.vue'
 
 <style scoped>
 .section {
-  /* margin-top: 6em; */
-  padding-top: 6em;
+  /* padding-top: 6em; */
 }
 </style>

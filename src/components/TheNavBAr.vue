@@ -157,18 +157,18 @@ const onLeave = (el, done) => {
 .slide-enter-active, .slide-leave-active {
 	transition: all .3s cubic-bezier(0.16, 0.59, 0.73, 0.38);
 }
+
 .navBar {
 	background-color: #0e0e0e;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	width: 100%;
 	height: 6em;
 	z-index: 99;
-	position: fixed;
 }
 .navBar__content {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 }
 .hamburger {
 	position: relative;
