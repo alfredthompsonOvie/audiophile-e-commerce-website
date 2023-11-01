@@ -11,7 +11,7 @@
 						srcset="@/assets/images/mark-II-headphones-tablet.svg"
 						media="(min-width: 450px)"
 					/>
-					<img src="@/assets/images/mark-II-headphones-mobile.svg" alt="" />
+					<img src="@/assets/images/mark-II-headphones-mobile.svg" alt="mark II headphones" />
 				</picture>
 				<section class="hero__details">
 					<h1 class="subHeading">new product</h1>
@@ -23,47 +23,14 @@
 					<router-link :to="{ name: 'productDetail', params: { id: 'headphones/xx99-mark-II-headphones' }}" class="cta cta--prim"
 						>see product</router-link
 					>
-					<!-- <router-link :to="{ name: 'headphoneDetails', params: { id: `${'xx99 mark ii headphones'.split(' ').join('-')}`} }" class="cta cta--prim"
-						>see product</router-link
-					> -->
 				</section>
 			</section>
 		</section>
+
 		<section class="category grid">
-			<!-- <ul class="dropdown">
-				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'product' }" class="dropdown__link">
-						<img src="@/assets/images/image-headphone-menu.svg" alt="" />
-						<p>Headphones</p>
-						<span>
-							<span class="span__text"> shop </span>
-							<font-awesome-icon icon="fa-solid fa-angle-right" />
-						</span>
-					</router-link>
-				</li>
-				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'product' }" class="dropdown__link">
-						<img src="@/assets/images/image-speakers-menu.svg" alt="" />
-						<p>Speakers</p>
-						<span>
-							<span class="span__text"> shop </span>
-							<font-awesome-icon icon="fa-solid fa-angle-right" />
-						</span>
-					</router-link>
-				</li>
-				<li class="dropdown__item menuItem">
-					<router-link :to="{ name: 'product' }" class="dropdown__link">
-						<img src="@/assets/images/image-earphone-menu.png" alt="" />
-						<p>Earphones</p>
-						<span>
-							<span class="span__text"> shop </span>
-							<font-awesome-icon icon="fa-solid fa-angle-right" />
-						</span>
-					</router-link>
-				</li>
-			</ul> -->
 			<BaseCategoryLinks class="grid__content dropdown" />
 		</section>
+		
 		<section class="products grid">
 			<section class="grid__content">
 				<section class="product__contents product__speaker--zx9">
@@ -80,11 +47,7 @@
 							Upgrade to premium speakers that are phenomenally built to deliver
 							truly remarkable sound.
 						</p>
-						<!-- <router-link
-							:to="{ name: 'speakerDetails', params: { id: 'zx9-speakers' } }"
-							class="cta cta--sec"
-							>see product</router-link
-						> -->
+
 						<router-link :to="{ name: 'productDetail', params: { id: 'speakers/zx9-speaker' }}" class="cta cta--sec"
 						>see product</router-link
 					>
@@ -107,11 +70,7 @@
 					</picture>
 					<section class="product__content--zx7">
 						<h1 class="heading--alt">zx7 Speakers</h1>
-						<!-- <router-link
-							:to="{ name: 'speakerDetails', params: { id: 'zx7-speaker' } }"
-							class="cta cta--alt"
-							>see product</router-link
-						> -->
+
 						<router-link :to="{ name: 'productDetail', params: { id: 'speakers/zx7-speaker' }}" class="cta cta--alt"
 						>see product</router-link
 					>
@@ -265,23 +224,11 @@ import BaseAbout from "../components/BaseAbout.vue";
 }
 @media (min-width: 600px) {
 	.category {
-		margin-top: 3em;
+		margin-top: 0em;
 	}
-	/* .dropdown {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 1em;
-		padding: 5em 2em 4em;
-		border-bottom-left-radius: 20px;
-		border-bottom-right-radius: 20px;
-	}
-	.dropdown__item + .dropdown__item {
-		margin-top: 0;
-	}
-	.dropdown__item {
-		flex: 1;
-	} */
+	.products {
+	margin-top: 0em;
+}
 	.btn--cart {
 		margin-left: auto;
 	}

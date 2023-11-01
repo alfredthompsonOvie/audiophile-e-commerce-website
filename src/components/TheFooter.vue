@@ -5,6 +5,7 @@
 				<img
 					src="@/assets/images/audiophile.svg"
 					alt="audiophile home button"
+					class="audiophileLogo"
 				/>
 			</router-link>
 
@@ -69,6 +70,9 @@ footer {
 	display: inline-block;
 	margin-bottom: 1.2em;
 }
+.audiophileLogo:hover {
+	filter: invert(.5) sepia(2) saturate(44);
+}
 p {
 	font-size: 15px;
 	line-height: 25px;
@@ -103,7 +107,8 @@ p {
 	.footer__contents {
 		text-align: left;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		/* grid-template-columns: repeat(2, 1fr); */
+		grid-template-columns: 1.5fr .5fr;
 		grid-template-rows: repeat(4, auto);
 	}
 	.brand {
@@ -119,7 +124,7 @@ p {
 		grid-row: 3;
 	}
 	.copyright {
-		grid-column: 1/-1;
+		grid-column: 1;
 		grid-row: 4;
 	}
 

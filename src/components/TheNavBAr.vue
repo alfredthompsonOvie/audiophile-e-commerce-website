@@ -3,10 +3,12 @@
 		<section class="grid__content navBar__content">
 			<!-- hamburger -->
 			<section class="hamburger" v-if="isMobile">
-				<button class="openMenu" v-if="!isMenuOpen" @click="handleClick">
+				<transition name="slide" mode="out-in">
+				</transition>
+				<button class="openMenu" v-if="!isMenuOpen" @click.prevent="handleClick">
 					<font-awesome-icon icon="fa-solid fa-bars" />
 				</button>
-				<button class="closeMenu" v-if="isMenuOpen" @click="handleClick">
+				<button class="closeMenu" v-else @click.prevent="handleClick">
 					<font-awesome-icon icon="fa-solid fa-xmark" />
 				</button>
 			</section>
@@ -20,23 +22,18 @@
 
 			<!-- menu -->
 			<!-- mobile  -->
-			<BaseCategoryLinks class="mobileMenu" v-if="isMenuOpen"/>
+			<!-- appear -->
+			<transition
+				name="slide"
+				:css="false"
+				@beforeEnter="onBeforeEnter"
+				@enter="onEnter"
+				@leave="onLeave"
+			>
+			<BaseCategoryLinks class="mobileMenu" v-show="isMenuOpen" />
+		</transition>
 
 			<!-- desktop nav -->
-			<!-- <ul class="nav__menu" v-if="!isMobile">
-				<li>
-					<router-link :to="{ name: 'home' }">Home</router-link>
-				</li>
-				<li>
-					<router-link :to="{ name: 'headphones' }">Headphones</router-link>
-				</li>
-				<li>
-					<router-link :to="{ name: 'speakers' }">Speakers</router-link>
-				</li>
-				<li>
-					<router-link :to="{ name: 'earphones' }">Earphones</router-link>
-				</li>
-			</ul> -->
 			<BaseNavMenu v-if="!isMobile" />
 			<!-- ^^^^^^^^^^menu^^^^^^^^^^^ -->
 			<!-- cart -->
@@ -87,41 +84,86 @@ const checkScreen = () => {
 	return;
 };
 
-// const tl = gsap.timeline({
-// 	reversed: true,
-// 	onStart: () => {
-// 		isMenuOpen.value = !isMenuOpen.value;
-// 	},
-// 	onReverseComplete: () => {
-// 		isMenuOpen.value = !isMenuOpen.value;
-// 	},
-// });
+
+
+
 onMounted(() => {
 	checkScreen();
 	window.addEventListener("resize", checkScreen);
 
-	// tl.from(".mobileMenu .menuItem", {
-	// 	autoAlpha: 0.01,
-	// 	x: -50,
-	// 	stagger: 0.3,
-	// });
+
 });
 
+
+// const tl = gsap.timeline({
+// reversed: true,
+// onStart: () => {
+// 	// isMenuOpen.value = true;
+// 	tl.from('.menuItem', {
+// 		autoAlpha: 0.01,
+// 		stagger: 0.3,
+// 		y: 20,
+// 	})
+// },
+// onReverseComplete: () => {
+// 	// isMenuOpen.value = false;
+
+// 	},
+// });
 const handleClick = () => {
-	console.log("clicked");
+	// console.log("clicked");
 	// tl.reversed(!tl.reversed());
 	isMenuOpen.value = !isMenuOpen.value;
-
 };
+const onBeforeEnter = (el) => {
+	const li = el.querySelectorAll('.menuItem');
+	// console.log(li);
+	gsap.set(li, {
+		autoAlpha: 0.01
+	})
+}
+const onEnter = (el, done) => {
+	const li = el.querySelectorAll('.menuItem');
+	gsap.to(li, {
+		autoAlpha: 1,
+		stagger: 0.3,
+		onComplete: done,
+		onStart: () => {
+			gsap.set(li, {
+			autoAlpha: 0.01
+	})
+		}
+	})
+}
+const onLeave = (el, done) => {
+	const li = el.querySelectorAll('.menuItem');
+	gsap.to(li, {
+		autoAlpha: 0.01,
+		duration: 0.1,
+		onComplete: done,
+	})
+}
+
+
+
 </script>
 
 <style scoped>
+.slide-enter-from, .slide-leave-to {
+	opacity: 0;
+	/* transform: translateX(-20px); */
+	transform: rotate(-135deg);
+}
+.slide-enter-active, .slide-leave-active {
+	transition: all .3s cubic-bezier(0.16, 0.59, 0.73, 0.38);
+}
 .navBar {
 	background-color: #0e0e0e;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	width: 100%;
 	height: 6em;
 	z-index: 99;
+	position: fixed;
 }
 .navBar__content {
 	display: flex;
@@ -138,39 +180,30 @@ const handleClick = () => {
 	z-index: 99;
 }
 .mobileMenu {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.2);
 	display: grid;
 	grid-template-columns: 1fr 10fr 1fr;
 	grid-template-rows: 10em auto;
 	z-index: 20;
 }
-.overlay {
-	background-color: rgba(0, 0, 0, 0.2);
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 10;
-}
+
 /* nav menu */
 .btn--cart {
 	position: relative;
+	/* color: var(--main); */
 }
 
 .itemsInCart {
-	background-color: var(--grayishWhite);
+	color: var(--grayishWhite);
+	background-color: var(--main);
 	position: absolute;
 	top: -0.8em;
 	left: 1.6em;
-	padding: 0.2em;
+	padding: 0.25em;
 	border-radius: 50%;
 	font-size: 0.7rem;
 }
@@ -202,7 +235,6 @@ const handleClick = () => {
 		grid-template-rows: 5em auto;
 		z-index: 20;
 	}
-	
 }
 @media (min-width: 600px) and (max-width: 991px) {
 	.navBar__content {

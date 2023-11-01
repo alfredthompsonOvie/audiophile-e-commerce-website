@@ -52,6 +52,7 @@
 	padding: 5em 2em 2em;
 	font-size: 15px;
 	transition: all 1s linear;
+	flex: 1;
 }
 .dropdown__link img {
 	position: absolute;
@@ -106,6 +107,7 @@
 		padding: 5em 2em 4em;
 		border-bottom-left-radius: 20px;
 		border-bottom-right-radius: 20px;
+		width: 100%;
 	}
 	.dropdown__item + .dropdown__item {
 		margin-top: 0;

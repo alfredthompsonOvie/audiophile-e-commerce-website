@@ -33,7 +33,7 @@
 
 <style scoped>
 .about {
-	margin-top: 3em;
+	margin-top: 5em;
 }
 .about__contents {
 	display: grid;

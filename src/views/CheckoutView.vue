@@ -241,7 +241,11 @@
 			</section>
 		</section>
 	</main>
-	<CheckoutModalVue v-if="feedback"/>
+	
+	<template v-if="feedback">
+		<CheckoutModalVue />
+		<div class="overlay"></div>
+	</template>
 </template>
 
 <script setup>

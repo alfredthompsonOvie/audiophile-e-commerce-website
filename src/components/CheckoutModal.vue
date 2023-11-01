@@ -49,6 +49,7 @@
 			</button>
 		</div>
 	</section>
+	
 </template>
 
 <script setup>
@@ -96,17 +97,19 @@ function formatNumber(num) {
 
 <style scoped>
 .modal {
-	position: fixed;
-	top: 0;
+	position: absolute;
+	top: 0em;
 	left: 0;
+	bottom: 0;
 	width: 100%;
-	height: 100vh;
+	/* height: 100vh; */
 
 	background-color: rgba(0, 0, 0, 0.4);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 1em 2em;
+	padding: 7em 2em;
+	z-index: 100;
 }
 .feedback {
 	background-color: #fff;
@@ -114,7 +117,7 @@ function formatNumber(num) {
 	border-radius: 8px;
 	max-width: 540px;
 	width: 100%;
-  margin-top: 5em;
+  margin-top: 9em;
 }
 .checkmark {
 	width: 64px;
